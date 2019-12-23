@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B42D8F8C23B131AA0062F018 /* TestReadingList.json in Resources */ = {isa = PBXBuildFile; fileRef = B42D8F8B23B131AA0062F018 /* TestReadingList.json */; };
 		B47AC33023A80C0A000D3728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47AC32F23A80C0A000D3728 /* AppDelegate.swift */; };
 		B47AC33223A80C0A000D3728 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47AC33123A80C0A000D3728 /* SceneDelegate.swift */; };
 		B47AC33423A80C0A000D3728 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47AC33323A80C0A000D3728 /* ContentView.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B42D8F8B23B131AA0062F018 /* TestReadingList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestReadingList.json; sourceTree = "<group>"; };
 		B47AC32C23A80C0A000D3728 /* ReadingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47AC32F23A80C0A000D3728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B47AC33123A80C0A000D3728 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				B47AC34623A80C0D000D3728 /* ModelTests.swift */,
+				B42D8F8B23B131AA0062F018 /* TestReadingList.json */,
 				B47AC34823A80C0D000D3728 /* Info.plist */,
 			);
 			path = ReadingListTests;
@@ -218,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B42D8F8C23B131AA0062F018 /* TestReadingList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

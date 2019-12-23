@@ -4,7 +4,33 @@
 import XCTest
 @testable import ReadingList
 
-let encoder = JSONEncoder()
+private let encoder = JSONEncoder()
+private let decoder = JSONDecoder()
+
+private let testData: JsonDictionary = [
+    "id": "F345D178-F31B-4D71-9FBD-A684A974A68A",
+    "title": "My Summer Reading",
+    "books": [
+        [
+            "id": "02CEF533-3878-4B18-8ECC-97866C9F263E",
+            "title": "The Tempest",
+            "author": [
+                "id": "6338E8F7-10E8-4B68-AF66-200E6430638F",
+                "firstName": "William",
+                "lastName": "Shakespeare"
+            ]
+        ],
+        [
+            "id": "0A251588-A458-4E58-8645-BE923EC53FB7",
+            "title": "The Taming of the Shrew",
+            "author": [
+                "id": "6338E8F7-10E8-4B68-AF66-200E6430638F",
+                "firstName": "William",
+                "lastName": "Shakespeare"
+            ]
+        ]
+    ]
+]
 
 class ModelTests: XCTestCase {
     
@@ -58,7 +84,20 @@ class ModelTests: XCTestCase {
         let storeController = StoreController(storeName: "TestReadingList", bundle: Bundle(for: type(of: self)))
         
         try! storeController.save(readingList: readingList)
-        XCTAssert(FileManager.default.fileExists(atPath: storeController.storeUrl.path))
-        print(storeController.storeUrl.path)
+        XCTAssert(FileManager.default.fileExists(atPath: storeController.storeFileUrl.path))
+        print(storeController.storeFileUrl.path)
+    }
+    
+    func testDecodeReadingList() {
+        let data = try! JSONSerialization.data(withJSONObject: testData)
+        let readingList = try! decoder.decode(ReadingList.self, from: data)
+        print(readingList)
+        
+        let storeController = StoreController(storeName: "TestReadingList", bundle: Bundle(for: type(of: self)))
+        try! storeController.save(readingList: readingList)
+        
+        let fetchedReadingList = storeController.fetchedReadingList
+        print(fetchedReadingList)
+        XCTAssertEqual(fetchedReadingList.books.count, 2)
     }
 }

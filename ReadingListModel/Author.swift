@@ -3,7 +3,7 @@
 
 import Foundation
 
-class Author: Codable, Identifiable
+class Author: Codable, Identifiable, CustomStringConvertible
 {
     var id = UUID()
     var firstName: String?
@@ -22,6 +22,8 @@ class Author: Codable, Identifiable
             default: return "\(firstName!) \(lastName!)"
         }
     }
+    
+    var description: String { fullName }
     
     init(firstName: String?, lastName: String?) {
         self.firstName = firstName

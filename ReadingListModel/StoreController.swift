@@ -3,11 +3,15 @@
 
 import Foundation
 
+typealias JsonDictionary = [String: Any]
+
 private let encoder: JSONEncoder = {
-    let e = JSONEncoder()
-    e.outputFormatting = .prettyPrinted
-    return e
+    let encoder = JSONEncoder()
+    encoder.outputFormatting = .prettyPrinted
+    return encoder
 }()
+
+private let decoder = JSONDecoder()
 
 extension String: Error { }
 
@@ -16,11 +20,23 @@ class StoreController
     var storeName = "ReadingList"
     var bundle = Bundle.main
     
-    var documentsUrl: URL {
-        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    var documentsDirectoryUrl: URL {
+        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
-    var storeUrl: URL {
-        return documentsUrl.appendingPathComponent(storeName).appendingPathExtension("json")
+    var storeFileUrl: URL {
+        documentsDirectoryUrl.appendingPathComponent(storeName).appendingPathExtension("json")
+    }
+    var templateStoreFileUrl: URL {
+        bundle.url(forResource: storeName, withExtension: "json")!
+    }
+    
+    var fetchedReadingList: ReadingList {
+        guard
+            let data = try? Data(contentsOf: storeFileUrl),
+            let readingList = try? decoder.decode(ReadingList.self, from: data) else {
+            fatalError("Unable to decode ReadingList at url \(storeFileUrl)")
+        }
+        return readingList
     }
     
     init() { }
@@ -28,6 +44,13 @@ class StoreController
     init(storeName: String, bundle: Bundle) {
         self.storeName = storeName
         self.bundle = bundle
+        copyStoreFileIfNecessary()
+    }
+    
+    func copyStoreFileIfNecessary() {
+        if !FileManager.default.fileExists(atPath: storeFileUrl.path) {
+            try! FileManager.default.copyItem(at: templateStoreFileUrl, to: storeFileUrl)
+        }
     }
     
     func save(readingList: ReadingList) throws {
@@ -36,9 +59,9 @@ class StoreController
         }
         
         do {
-            try data.write(to: storeUrl)
+            try data.write(to: storeFileUrl)
         } catch {
-            print("Unable to write to \(storeUrl), error was \(error)")
+            print("Unable to write to \(storeFileUrl), error was \(error)")
         }
     }
 }

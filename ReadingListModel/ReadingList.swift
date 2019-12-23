@@ -3,11 +3,13 @@
 
 import Foundation
 
-class ReadingList: Codable, Identifiable
+class ReadingList: Codable, Identifiable, CustomStringConvertible
 {
     var id = UUID()
     var title: String
     var books: [Book]
+    
+    var description: String { "\n\(ReadingList.self): \n\ttitle: \(title)\n\tbooks: \(books)\n" }
     
     init(title: String, books: [Book]) {
         self.title = title
