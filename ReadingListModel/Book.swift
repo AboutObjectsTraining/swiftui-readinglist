@@ -7,12 +7,14 @@ class Book: Codable, Identifiable, CustomStringConvertible
 {
     var id = UUID()
     var title: String
+    var year: String
     var author: Author
     
     var description: String { "\n\t\t\(id): \(title), \(author)" }
     
-    init(title: String, author: Author) {
+    init(title: String, year: String, author: Author) {
         self.title = title
+        self.year = year
         self.author = author
     }
 }

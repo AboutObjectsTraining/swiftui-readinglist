@@ -2,7 +2,7 @@
 // See LICENSE.txt for this project's licensing information.
 
 import XCTest
-@testable import ReadingList
+@testable import ReadingListApp
 
 private let encoder = JSONEncoder()
 private let decoder = JSONDecoder()
@@ -14,6 +14,7 @@ private let testData: JsonDictionary = [
         [
             "id": "02CEF533-3878-4B18-8ECC-97866C9F263E",
             "title": "The Tempest",
+            "year": "2012",
             "author": [
                 "id": "6338E8F7-10E8-4B68-AF66-200E6430638F",
                 "firstName": "William",
@@ -23,6 +24,7 @@ private let testData: JsonDictionary = [
         [
             "id": "0A251588-A458-4E58-8645-BE923EC53FB7",
             "title": "The Taming of the Shrew",
+            "year": "2019",
             "author": [
                 "id": "6338E8F7-10E8-4B68-AF66-200E6430638F",
                 "firstName": "William",
@@ -48,7 +50,7 @@ class ModelTests: XCTestCase {
     
     func testBook() {
         let author = Author(firstName: "Jonathan", lastName: "Swift")
-        let book = Book(title: "Gulliver's Travels", author: author)
+        let book = Book(title: "Gulliver's Travels", year: "2001", author: author)
         
         guard let data = try? encoder.encode(book) else {
             XCTFail("Unable to encode \(book)")
@@ -61,8 +63,8 @@ class ModelTests: XCTestCase {
     
     func testReadingList() {
         let author = Author(firstName: "William", lastName: "Shakespeare")
-        let book1 = Book(title: "The Tempest", author: author)
-        let book2 = Book(title: "Julius Ceasar", author: author)
+        let book1 = Book(title: "The Tempest", year: "2012", author: author)
+        let book2 = Book(title: "Julius Ceasar", year: "2019", author: author)
         let readingList = ReadingList(title: "My Summer Reading", books: [book1, book2])
         
         guard let data = try? encoder.encode(readingList) else {
@@ -78,8 +80,8 @@ class ModelTests: XCTestCase {
     
     func testSaveReadingList() {
         let author = Author(firstName: "William", lastName: "Shakespeare")
-        let book1 = Book(title: "The Tempest", author: author)
-        let book2 = Book(title: "Julius Ceasar", author: author)
+        let book1 = Book(title: "The Tempest", year: "2012", author: author)
+        let book2 = Book(title: "Julius Ceasar", year: "2019", author: author)
         let readingList = ReadingList(title: "My Summer Reading", books: [book1, book2])
         let storeController = StoreController(storeName: "TestReadingList", bundle: Bundle(for: type(of: self)))
         

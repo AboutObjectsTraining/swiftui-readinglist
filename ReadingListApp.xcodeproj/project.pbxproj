@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B42D8F8C23B131AA0062F018 /* TestReadingList.json in Resources */ = {isa = PBXBuildFile; fileRef = B42D8F8B23B131AA0062F018 /* TestReadingList.json */; };
+		B42D8F8E23B159C00062F018 /* ReadingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42D8F8D23B159C00062F018 /* ReadingListView.swift */; };
+		B42D8F9023B15F600062F018 /* ReadingList.json in Resources */ = {isa = PBXBuildFile; fileRef = B42D8F8F23B15F600062F018 /* ReadingList.json */; };
 		B47AC33023A80C0A000D3728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47AC32F23A80C0A000D3728 /* AppDelegate.swift */; };
 		B47AC33223A80C0A000D3728 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47AC33123A80C0A000D3728 /* SceneDelegate.swift */; };
-		B47AC33423A80C0A000D3728 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47AC33323A80C0A000D3728 /* ContentView.swift */; };
 		B47AC33623A80C0D000D3728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B47AC33523A80C0D000D3728 /* Assets.xcassets */; };
 		B47AC33923A80C0D000D3728 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B47AC33823A80C0D000D3728 /* Preview Assets.xcassets */; };
 		B47AC33C23A80C0D000D3728 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B47AC33A23A80C0D000D3728 /* LaunchScreen.storyboard */; };
@@ -33,10 +34,11 @@
 
 /* Begin PBXFileReference section */
 		B42D8F8B23B131AA0062F018 /* TestReadingList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestReadingList.json; sourceTree = "<group>"; };
-		B47AC32C23A80C0A000D3728 /* ReadingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B42D8F8D23B159C00062F018 /* ReadingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListView.swift; sourceTree = "<group>"; };
+		B42D8F8F23B15F600062F018 /* ReadingList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ReadingList.json; sourceTree = "<group>"; };
+		B47AC32C23A80C0A000D3728 /* ReadingListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadingListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47AC32F23A80C0A000D3728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B47AC33123A80C0A000D3728 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B47AC33323A80C0A000D3728 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B47AC33523A80C0D000D3728 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B47AC33823A80C0D000D3728 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B47AC33B23A80C0D000D3728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,7 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				B47AC35123AA71DA000D3728 /* ReadingListModel */,
-				B47AC32E23A80C0A000D3728 /* ReadingList */,
+				B47AC32E23A80C0A000D3728 /* ReadingListApp */,
 				B47AC34523A80C0D000D3728 /* ReadingListTests */,
 				B47AC32D23A80C0A000D3728 /* Products */,
 			);
@@ -81,24 +83,24 @@
 		B47AC32D23A80C0A000D3728 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B47AC32C23A80C0A000D3728 /* ReadingList.app */,
+				B47AC32C23A80C0A000D3728 /* ReadingListApp.app */,
 				B47AC34223A80C0D000D3728 /* ReadingListTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B47AC32E23A80C0A000D3728 /* ReadingList */ = {
+		B47AC32E23A80C0A000D3728 /* ReadingListApp */ = {
 			isa = PBXGroup;
 			children = (
 				B47AC32F23A80C0A000D3728 /* AppDelegate.swift */,
 				B47AC33123A80C0A000D3728 /* SceneDelegate.swift */,
-				B47AC33323A80C0A000D3728 /* ContentView.swift */,
+				B42D8F8D23B159C00062F018 /* ReadingListView.swift */,
 				B47AC33523A80C0D000D3728 /* Assets.xcassets */,
 				B47AC33A23A80C0D000D3728 /* LaunchScreen.storyboard */,
 				B47AC33D23A80C0D000D3728 /* Info.plist */,
 				B47AC33723A80C0D000D3728 /* Preview Content */,
 			);
-			path = ReadingList;
+			path = ReadingListApp;
 			sourceTree = "<group>";
 		};
 		B47AC33723A80C0D000D3728 /* Preview Content */ = {
@@ -126,6 +128,7 @@
 				B47AC35423AA7756000D3728 /* Book.swift */,
 				B47AC35623AA7999000D3728 /* ReadingList.swift */,
 				B47AC35823AA7BAF000D3728 /* StoreController.swift */,
+				B42D8F8F23B15F600062F018 /* ReadingList.json */,
 			);
 			path = ReadingListModel;
 			sourceTree = "<group>";
@@ -147,7 +150,7 @@
 			);
 			name = ReadingList;
 			productName = ReadingList;
-			productReference = B47AC32C23A80C0A000D3728 /* ReadingList.app */;
+			productReference = B47AC32C23A80C0A000D3728 /* ReadingListApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B47AC34123A80C0D000D3728 /* ReadingListTests */ = {
@@ -187,7 +190,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B47AC32723A80C09000D3728 /* Build configuration list for PBXProject "ReadingList" */;
+			buildConfigurationList = B47AC32723A80C09000D3728 /* Build configuration list for PBXProject "ReadingListApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -213,6 +216,7 @@
 			files = (
 				B47AC33C23A80C0D000D3728 /* LaunchScreen.storyboard in Resources */,
 				B47AC33923A80C0D000D3728 /* Preview Assets.xcassets in Resources */,
+				B42D8F9023B15F600062F018 /* ReadingList.json in Resources */,
 				B47AC33623A80C0D000D3728 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,11 +237,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B47AC33023A80C0A000D3728 /* AppDelegate.swift in Sources */,
+				B42D8F8E23B159C00062F018 /* ReadingListView.swift in Sources */,
 				B47AC33223A80C0A000D3728 /* SceneDelegate.swift in Sources */,
 				B47AC35723AA7999000D3728 /* ReadingList.swift in Sources */,
 				B47AC35323AA71F4000D3728 /* Author.swift in Sources */,
 				B47AC35523AA7756000D3728 /* Book.swift in Sources */,
-				B47AC33423A80C0A000D3728 /* ContentView.swift in Sources */,
 				B47AC35923AA7BAF000D3728 /* StoreController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,15 +395,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"ReadingList/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ReadingListApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ReadingList/Info.plist;
+				INFOPLIST_FILE = ReadingListApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aboutobjects.swiftui.ReadingList;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aboutobjects.swiftui.ReadingListApp;
+				PRODUCT_NAME = ReadingListApp;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -410,15 +414,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"ReadingList/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ReadingListApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ReadingList/Info.plist;
+				INFOPLIST_FILE = ReadingListApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aboutobjects.swiftui.ReadingList;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aboutobjects.swiftui.ReadingListApp;
+				PRODUCT_NAME = ReadingListApp;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -441,7 +445,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReadingList.app/ReadingList";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReadingListApp.app/ReadingListApp";
 			};
 			name = Debug;
 		};
@@ -462,14 +466,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReadingList.app/ReadingList";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReadingListApp.app/ReadingListApp";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B47AC32723A80C09000D3728 /* Build configuration list for PBXProject "ReadingList" */ = {
+		B47AC32723A80C09000D3728 /* Build configuration list for PBXProject "ReadingListApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B47AC34923A80C0D000D3728 /* Debug */,

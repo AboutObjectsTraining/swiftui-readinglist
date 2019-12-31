@@ -15,7 +15,7 @@ private let decoder = JSONDecoder()
 
 extension String: Error { }
 
-class StoreController
+class StoreController: ObservableObject
 {
     var storeName = "ReadingList"
     var bundle = Bundle.main
