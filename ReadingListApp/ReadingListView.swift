@@ -23,20 +23,11 @@ struct ReadingListView: View
             .navigationBarItems(leading: Button(action: addCell) { Image(systemName: "plus") },
                                 trailing: EditButton())
         }
-        .sheet(isPresented: $isAddingCell, onDismiss: {
-            print("TODO: Add cell")
+        .sheet(isPresented: $isAddingCell,
+               onDismiss: {
+                print("TODO: Add cell")
         }) {
-            VStack {
-                HStack {
-                    Button(action: { self.isAddingCell = false }, label: { Text("Cancel") })
-                    Spacer()
-                    Button(action: { self.isAddingCell = false }, label: { Text("Done") })
-                }
-                .padding(18.0)
-                Spacer()
-                Text("Add Cell Form")
-                Spacer()
-            }
+            AddBookView(isAddingCell: self.$isAddingCell)
         }
     }
     
@@ -72,4 +63,3 @@ struct ReadingListPreview: PreviewProvider {
     }
 }
 #endif
-

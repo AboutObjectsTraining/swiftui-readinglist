@@ -10,6 +10,7 @@
 		B42D8F8C23B131AA0062F018 /* TestReadingList.json in Resources */ = {isa = PBXBuildFile; fileRef = B42D8F8B23B131AA0062F018 /* TestReadingList.json */; };
 		B42D8F8E23B159C00062F018 /* ReadingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42D8F8D23B159C00062F018 /* ReadingListView.swift */; };
 		B42D8F9023B15F600062F018 /* ReadingList.json in Resources */ = {isa = PBXBuildFile; fileRef = B42D8F8F23B15F600062F018 /* ReadingList.json */; };
+		B46F3FE423BBD14800A0A108 /* AddBooklView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46F3FE323BBD14800A0A108 /* AddBooklView.swift */; };
 		B47AC33023A80C0A000D3728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47AC32F23A80C0A000D3728 /* AppDelegate.swift */; };
 		B47AC33223A80C0A000D3728 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47AC33123A80C0A000D3728 /* SceneDelegate.swift */; };
 		B47AC33623A80C0D000D3728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B47AC33523A80C0D000D3728 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		B42D8F8B23B131AA0062F018 /* TestReadingList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestReadingList.json; sourceTree = "<group>"; };
 		B42D8F8D23B159C00062F018 /* ReadingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListView.swift; sourceTree = "<group>"; };
 		B42D8F8F23B15F600062F018 /* ReadingList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ReadingList.json; sourceTree = "<group>"; };
+		B46F3FE323BBD14800A0A108 /* AddBooklView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBooklView.swift; sourceTree = "<group>"; };
 		B47AC32C23A80C0A000D3728 /* ReadingListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadingListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47AC32F23A80C0A000D3728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B47AC33123A80C0A000D3728 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				B47AC32F23A80C0A000D3728 /* AppDelegate.swift */,
 				B47AC33123A80C0A000D3728 /* SceneDelegate.swift */,
 				B42D8F8D23B159C00062F018 /* ReadingListView.swift */,
+				B46F3FE323BBD14800A0A108 /* AddBooklView.swift */,
 				B47AC33523A80C0D000D3728 /* Assets.xcassets */,
 				B47AC33A23A80C0D000D3728 /* LaunchScreen.storyboard */,
 				B47AC33D23A80C0D000D3728 /* Info.plist */,
@@ -236,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B46F3FE423BBD14800A0A108 /* AddBooklView.swift in Sources */,
 				B47AC33023A80C0A000D3728 /* AppDelegate.swift in Sources */,
 				B42D8F8E23B159C00062F018 /* ReadingListView.swift in Sources */,
 				B47AC33223A80C0A000D3728 /* SceneDelegate.swift in Sources */,
