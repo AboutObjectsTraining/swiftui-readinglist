@@ -19,7 +19,7 @@ final class Book: ObservableObject, Codable, Identifiable, CustomStringConvertib
         
     var description: String { "\n\t\t\(id): \(title), \(author)" }
     
-    init(title: String, year: String, author: Author) {
+    init(title: String = "", year: String = "", author: Author = Author()) {
         self.title = title
         self.year = year
         self.author = author

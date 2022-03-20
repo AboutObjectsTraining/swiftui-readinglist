@@ -12,12 +12,13 @@ private let encoder: JSONEncoder = {
 }()
 
 private let decoder = JSONDecoder()
+private let defaultStoreName = "ReadingList"
 
 extension String: Error { }
 
 class StoreController: ObservableObject
 {
-    var storeName = "ReadingList"
+    let storeName: String
     var bundle = Bundle.main
     
     var documentsDirectoryUrl: URL {
@@ -39,7 +40,9 @@ class StoreController: ObservableObject
         return readingList
     }
     
-    init() { }
+    init() {
+        storeName = defaultStoreName
+    }
     
     init(storeName: String, bundle: Bundle) {
         self.storeName = storeName

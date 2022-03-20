@@ -39,7 +39,7 @@ final class Author: ObservableObject, Codable, Identifiable, CustomStringConvert
     
     var description: String { fullName }
     
-    init(firstName: String?, lastName: String?) {
+    init(firstName: String? = nil, lastName: String? = nil) {
         self.firstName = firstName ?? ""
         self.lastName = lastName ?? ""
     }
