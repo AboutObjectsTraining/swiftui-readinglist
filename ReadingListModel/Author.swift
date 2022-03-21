@@ -3,7 +3,7 @@
 
 import Foundation
 
-final class Author: ObservableObject, Codable, Identifiable, CustomStringConvertible
+struct Author: Codable, Identifiable, CustomStringConvertible
 {
     enum CodingKeys: String, CodingKey {
         case id
@@ -11,9 +11,9 @@ final class Author: ObservableObject, Codable, Identifiable, CustomStringConvert
         case lastName
     }
     
-    @Published var id = UUID()
-    @Published var firstName: String
-    @Published var lastName: String
+    var id = UUID()
+    var firstName: String
+    var lastName: String
     
     static let unknown = "Unknown"
     
@@ -28,14 +28,6 @@ final class Author: ObservableObject, Codable, Identifiable, CustomStringConvert
             default: return "\(firstName) \(lastName)"
         }
     }
-
-//    var fullName: String {
-//        switch (firstName, lastName) {
-//            case (nil, nil): return Author.unknown
-//            case (let name?, nil), (nil, let name?): return name
-//            default: return "\(firstName!) \(lastName!)"
-//        }
-//    }
     
     var description: String { fullName }
     

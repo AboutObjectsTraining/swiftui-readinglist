@@ -83,7 +83,7 @@ class ModelTests: XCTestCase {
         let book1 = Book(title: "The Tempest", year: "2012", author: author)
         let book2 = Book(title: "Julius Ceasar", year: "2019", author: author)
         let readingList = ReadingList(title: "My Summer Reading", books: [book1, book2])
-        let storeController = StoreController(storeName: "TestReadingList", bundle: Bundle(for: type(of: self)))
+        let storeController = DataStore(storeName: "TestReadingList", bundle: Bundle(for: type(of: self)))
         
         try! storeController.save(readingList: readingList)
         XCTAssert(FileManager.default.fileExists(atPath: storeController.storeFileUrl.path))
@@ -95,7 +95,7 @@ class ModelTests: XCTestCase {
         let readingList = try! decoder.decode(ReadingList.self, from: data)
         print(readingList)
         
-        let storeController = StoreController(storeName: "TestReadingList", bundle: Bundle(for: type(of: self)))
+        let storeController = DataStore(storeName: "TestReadingList", bundle: Bundle(for: type(of: self)))
         try! storeController.save(readingList: readingList)
         
         let fetchedReadingList = storeController.fetchedReadingList

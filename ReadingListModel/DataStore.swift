@@ -16,8 +16,9 @@ private let defaultStoreName = "ReadingList"
 
 extension String: Error { }
 
-class StoreController: ObservableObject
+final class DataStore
 {
+    let storeType = "json"
     let storeName: String
     var bundle = Bundle.main
     
@@ -25,23 +26,15 @@ class StoreController: ObservableObject
         FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
     var storeFileUrl: URL {
-        documentsDirectoryUrl.appendingPathComponent(storeName).appendingPathExtension("json")
+        documentsDirectoryUrl.appendingPathComponent(storeName).appendingPathExtension(storeType)
     }
     var templateStoreFileUrl: URL {
-        bundle.url(forResource: storeName, withExtension: "json")!
-    }
-    
-    var fetchedReadingList: ReadingList {
-        guard
-            let data = try? Data(contentsOf: storeFileUrl),
-            let readingList = try? decoder.decode(ReadingList.self, from: data) else {
-            fatalError("Unable to decode ReadingList at url \(storeFileUrl)")
-        }
-        return readingList
+        bundle.url(forResource: storeName, withExtension: storeType)!
     }
     
     init() {
         storeName = defaultStoreName
+        copyStoreFileIfNecessary()
     }
     
     init(storeName: String, bundle: Bundle) {
@@ -54,6 +47,15 @@ class StoreController: ObservableObject
         if !FileManager.default.fileExists(atPath: storeFileUrl.path) {
             try! FileManager.default.copyItem(at: templateStoreFileUrl, to: storeFileUrl)
         }
+    }
+    
+    func fetch() -> ReadingList {
+        guard
+            let data = try? Data(contentsOf: storeFileUrl),
+            let readingList = try? decoder.decode(ReadingList.self, from: data) else {
+            fatalError("Unable to decode ReadingList at url \(storeFileUrl)")
+        }
+        return readingList
     }
     
     func save(readingList: ReadingList) throws {

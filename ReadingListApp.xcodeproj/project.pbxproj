@@ -11,8 +11,6 @@
 		B42D8F8E23B159C00062F018 /* ReadingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42D8F8D23B159C00062F018 /* ReadingListView.swift */; };
 		B42D8F9023B15F600062F018 /* ReadingList.json in Resources */ = {isa = PBXBuildFile; fileRef = B42D8F8F23B15F600062F018 /* ReadingList.json */; };
 		B46F3FE423BBD14800A0A108 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46F3FE323BBD14800A0A108 /* AddBookView.swift */; };
-		B47AC33023A80C0A000D3728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47AC32F23A80C0A000D3728 /* AppDelegate.swift */; };
-		B47AC33223A80C0A000D3728 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47AC33123A80C0A000D3728 /* SceneDelegate.swift */; };
 		B47AC33623A80C0D000D3728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B47AC33523A80C0D000D3728 /* Assets.xcassets */; };
 		B47AC33923A80C0D000D3728 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B47AC33823A80C0D000D3728 /* Preview Assets.xcassets */; };
 		B47AC33C23A80C0D000D3728 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B47AC33A23A80C0D000D3728 /* LaunchScreen.storyboard */; };
@@ -20,7 +18,10 @@
 		B47AC35323AA71F4000D3728 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47AC35223AA71F4000D3728 /* Author.swift */; };
 		B47AC35523AA7756000D3728 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47AC35423AA7756000D3728 /* Book.swift */; };
 		B47AC35723AA7999000D3728 /* ReadingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47AC35623AA7999000D3728 /* ReadingList.swift */; };
-		B47AC35923AA7BAF000D3728 /* StoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47AC35823AA7BAF000D3728 /* StoreController.swift */; };
+		B47AC35923AA7BAF000D3728 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47AC35823AA7BAF000D3728 /* DataStore.swift */; };
+		B4BFEEAD27E7C3980056F379 /* ReadingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BFEEAC27E7C3980056F379 /* ReadingListViewModel.swift */; };
+		B4BFEEAF27E7C41F0056F379 /* ReadingListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BFEEAE27E7C41F0056F379 /* ReadingListApp.swift */; };
+		B4BFEEB127E8BC6F0056F379 /* ReadingList2.json in Resources */ = {isa = PBXBuildFile; fileRef = B4BFEEB027E8BC6F0056F379 /* ReadingList2.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +40,6 @@
 		B42D8F8F23B15F600062F018 /* ReadingList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ReadingList.json; sourceTree = "<group>"; };
 		B46F3FE323BBD14800A0A108 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		B47AC32C23A80C0A000D3728 /* ReadingListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadingListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B47AC32F23A80C0A000D3728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B47AC33123A80C0A000D3728 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B47AC33523A80C0D000D3728 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B47AC33823A80C0D000D3728 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B47AC33B23A80C0D000D3728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,7 +50,10 @@
 		B47AC35223AA71F4000D3728 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		B47AC35423AA7756000D3728 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		B47AC35623AA7999000D3728 /* ReadingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingList.swift; sourceTree = "<group>"; };
-		B47AC35823AA7BAF000D3728 /* StoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreController.swift; sourceTree = "<group>"; };
+		B47AC35823AA7BAF000D3728 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		B4BFEEAC27E7C3980056F379 /* ReadingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListViewModel.swift; sourceTree = "<group>"; };
+		B4BFEEAE27E7C41F0056F379 /* ReadingListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListApp.swift; sourceTree = "<group>"; };
+		B4BFEEB027E8BC6F0056F379 /* ReadingList2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ReadingList2.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +96,9 @@
 		B47AC32E23A80C0A000D3728 /* ReadingListApp */ = {
 			isa = PBXGroup;
 			children = (
-				B47AC32F23A80C0A000D3728 /* AppDelegate.swift */,
-				B47AC33123A80C0A000D3728 /* SceneDelegate.swift */,
+				B4BFEEAE27E7C41F0056F379 /* ReadingListApp.swift */,
 				B42D8F8D23B159C00062F018 /* ReadingListView.swift */,
+				B4BFEEAC27E7C3980056F379 /* ReadingListViewModel.swift */,
 				B46F3FE323BBD14800A0A108 /* AddBookView.swift */,
 				B47AC33523A80C0D000D3728 /* Assets.xcassets */,
 				B47AC33A23A80C0D000D3728 /* LaunchScreen.storyboard */,
@@ -130,8 +132,9 @@
 				B47AC35223AA71F4000D3728 /* Author.swift */,
 				B47AC35423AA7756000D3728 /* Book.swift */,
 				B47AC35623AA7999000D3728 /* ReadingList.swift */,
-				B47AC35823AA7BAF000D3728 /* StoreController.swift */,
+				B47AC35823AA7BAF000D3728 /* DataStore.swift */,
 				B42D8F8F23B15F600062F018 /* ReadingList.json */,
+				B4BFEEB027E8BC6F0056F379 /* ReadingList2.json */,
 			);
 			path = ReadingListModel;
 			sourceTree = "<group>";
@@ -139,9 +142,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B47AC32B23A80C0A000D3728 /* ReadingList */ = {
+		B47AC32B23A80C0A000D3728 /* ReadingListApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B47AC34B23A80C0D000D3728 /* Build configuration list for PBXNativeTarget "ReadingList" */;
+			buildConfigurationList = B47AC34B23A80C0D000D3728 /* Build configuration list for PBXNativeTarget "ReadingListApp" */;
 			buildPhases = (
 				B47AC32823A80C0A000D3728 /* Sources */,
 				B47AC32923A80C0A000D3728 /* Frameworks */,
@@ -151,7 +154,7 @@
 			);
 			dependencies = (
 			);
-			name = ReadingList;
+			name = ReadingListApp;
 			productName = ReadingList;
 			productReference = B47AC32C23A80C0A000D3728 /* ReadingListApp.app */;
 			productType = "com.apple.product-type.application";
@@ -206,7 +209,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B47AC32B23A80C0A000D3728 /* ReadingList */,
+				B47AC32B23A80C0A000D3728 /* ReadingListApp */,
 				B47AC34123A80C0D000D3728 /* ReadingListTests */,
 			);
 		};
@@ -219,6 +222,7 @@
 			files = (
 				B47AC33C23A80C0D000D3728 /* LaunchScreen.storyboard in Resources */,
 				B47AC33923A80C0D000D3728 /* Preview Assets.xcassets in Resources */,
+				B4BFEEB127E8BC6F0056F379 /* ReadingList2.json in Resources */,
 				B42D8F9023B15F600062F018 /* ReadingList.json in Resources */,
 				B47AC33623A80C0D000D3728 /* Assets.xcassets in Resources */,
 			);
@@ -240,13 +244,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B46F3FE423BBD14800A0A108 /* AddBookView.swift in Sources */,
-				B47AC33023A80C0A000D3728 /* AppDelegate.swift in Sources */,
 				B42D8F8E23B159C00062F018 /* ReadingListView.swift in Sources */,
-				B47AC33223A80C0A000D3728 /* SceneDelegate.swift in Sources */,
+				B4BFEEAF27E7C41F0056F379 /* ReadingListApp.swift in Sources */,
+				B4BFEEAD27E7C3980056F379 /* ReadingListViewModel.swift in Sources */,
 				B47AC35723AA7999000D3728 /* ReadingList.swift in Sources */,
 				B47AC35323AA71F4000D3728 /* Author.swift in Sources */,
 				B47AC35523AA7756000D3728 /* Book.swift in Sources */,
-				B47AC35923AA7BAF000D3728 /* StoreController.swift in Sources */,
+				B47AC35923AA7BAF000D3728 /* DataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +267,7 @@
 /* Begin PBXTargetDependency section */
 		B47AC34423A80C0D000D3728 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B47AC32B23A80C0A000D3728 /* ReadingList */;
+			target = B47AC32B23A80C0A000D3728 /* ReadingListApp */;
 			targetProxy = B47AC34323A80C0D000D3728 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -488,7 +492,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B47AC34B23A80C0D000D3728 /* Build configuration list for PBXNativeTarget "ReadingList" */ = {
+		B47AC34B23A80C0D000D3728 /* Build configuration list for PBXNativeTarget "ReadingListApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B47AC34C23A80C0D000D3728 /* Debug */,

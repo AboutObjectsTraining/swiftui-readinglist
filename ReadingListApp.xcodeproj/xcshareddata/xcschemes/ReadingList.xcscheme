@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B47AC32B23A80C0A000D3728"
                BuildableName = "ReadingListApp.app"
-               BlueprintName = "ReadingList"
+               BlueprintName = "ReadingListApp"
                ReferencedContainer = "container:ReadingListApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -56,7 +56,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B47AC32B23A80C0A000D3728"
             BuildableName = "ReadingListApp.app"
-            BlueprintName = "ReadingList"
+            BlueprintName = "ReadingListApp"
             ReferencedContainer = "container:ReadingListApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -73,7 +73,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B47AC32B23A80C0A000D3728"
             BuildableName = "ReadingListApp.app"
-            BlueprintName = "ReadingList"
+            BlueprintName = "ReadingListApp"
             ReferencedContainer = "container:ReadingListApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

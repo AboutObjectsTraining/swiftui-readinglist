@@ -3,7 +3,7 @@
 
 import Foundation
 
-final class Book: ObservableObject, Codable, Identifiable, CustomStringConvertible
+struct Book: Codable, Identifiable, CustomStringConvertible
 {
     enum CodingKeys: String, CodingKey {
         case id
@@ -12,11 +12,11 @@ final class Book: ObservableObject, Codable, Identifiable, CustomStringConvertib
         case author
     }
     
-    @Published var id = UUID()
-    @Published var title: String
-    @Published var year: String
-    @Published var author: Author
-        
+    var id = UUID()
+    var title: String
+    var year: String
+    var author: Author
+    
     var description: String { "\n\t\t\(id): \(title), \(author)" }
     
     init(title: String = "", year: String = "", author: Author = Author()) {

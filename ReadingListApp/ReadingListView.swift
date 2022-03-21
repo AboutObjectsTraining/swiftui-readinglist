@@ -5,35 +5,49 @@ import SwiftUI
 
 struct ReadingListView: View
 {
-    @ObservedObject var storeController = StoreController(storeName: "ReadingList", bundle: Bundle.main)
-    @State var isAddingCell = false
-    
-    var readingList: ReadingList { storeController.fetchedReadingList }
-    var books: [Book] { readingList.books }
+    @EnvironmentObject var viewModel: ReadingListViewModel
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(readingList.books) {
+                ForEach(viewModel.books) {
                     BookCell(book: $0)
+                }
+                .onDelete { indexSet in
+                    deleteBooks(at: indexSet)
+                }
+                .onMove { from, to in
+                    moveBooks(fromOffsets: from, toOffset: to)
                 }
             }
             .listStyle(GroupedListStyle())
-            .navigationBarTitle(Text(readingList.title))
-            .navigationBarItems(leading: Button(action: addCell) { Image(systemName: "plus") },
-                                trailing: EditButton())
+            .navigationBarTitle(Text(viewModel.readingList.title))
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: showAddBookView,
+                           label: { Image(systemName: "plus") })
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    EditButton()
+                }
+            }
         }
-        .sheet(isPresented: $isAddingCell,
-               onDismiss: {
-                print("TODO: Add cell")
-        }) {
-            AddBookView(isAddingCell: self.$isAddingCell)
-        }
+        .sheet(
+            isPresented: $viewModel.isAddingBook,
+            content: { AddBookView() }
+        )
     }
     
-    func addCell() {
-        print("Adding cell...")
-        isAddingCell = true
+    private func showAddBookView() {
+        viewModel.isAddingBook = true
+    }
+    
+    private func deleteBooks(at indexSet: IndexSet) {
+        viewModel.deleteBooks(at: indexSet)
+    }
+    
+    func moveBooks(fromOffsets: IndexSet, toOffset: Int) {
+        viewModel.moveBooks(fromOffsets: fromOffsets, toOffset: toOffset)
     }
 }
 
