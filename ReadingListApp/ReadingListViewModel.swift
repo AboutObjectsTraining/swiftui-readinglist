@@ -8,11 +8,33 @@ final class ReadingListViewModel: ObservableObject {
     @Published var isAddingBook = false
     @Published var isEditingTitle = false
     @Published var readingList: ReadingList
-    @Published var books: [Book] = []
+    @Published var books: [Book] = [] {
+        didSet { makeCellViewModels() }
+    }
+    
+    private var cellViewModels: [BookCellViewModel] = []
         
     init(store: DataStore = DataStore()) {
         self.store = store
         self.readingList = ReadingList(title: "Empty", books: [])
+    }
+}
+
+// MARK: BookCell view models
+extension ReadingListViewModel {
+    
+    private func makeCellViewModels() {
+        cellViewModels = books.map {
+            BookCellViewModel(book: $0)
+        }
+    }
+
+    func cellViewModel(for book: Book) -> BookCellViewModel {
+        let cellVM = cellViewModels.first(where: { $0.book.id == book.id })
+        guard let cellVM = cellVM else {
+            fatalError("Unable to find cell view model for book: \(book)")
+        }
+        return cellVM
     }
 }
 
@@ -32,22 +54,32 @@ extension ReadingListViewModel {
     
     func addBook(_ book: Book) {
         books.append(book)
+        cellViewModels.append(BookCellViewModel(book: book))
         save()
+    }
+    
+    func update(book: Book) {
+        guard let index = books.firstIndex(where: { $0.id == book.id }) else {
+            print("Unable to find book \(book)")
+            return
+        }
+        books[index] = book
     }
     
     func deleteBooks(at indexSet: IndexSet) {
         books.remove(atOffsets: indexSet)
+        cellViewModels.remove(atOffsets: indexSet)
         save()
     }
     
     func moveBooks(fromOffsets: IndexSet, toOffset: Int) {
         books.move(fromOffsets: fromOffsets, toOffset: toOffset)
+        cellViewModels.move(fromOffsets: fromOffsets, toOffset: toOffset)
         save()
     }
     
     func save() {
         readingList.books = books
-        
         do {
             try store.save(readingList: readingList)
         } catch {

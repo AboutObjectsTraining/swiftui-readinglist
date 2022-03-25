@@ -19,6 +19,10 @@
 		B47AC35523AA7756000D3728 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47AC35423AA7756000D3728 /* Book.swift */; };
 		B47AC35723AA7999000D3728 /* ReadingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47AC35623AA7999000D3728 /* ReadingList.swift */; };
 		B47AC35923AA7BAF000D3728 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47AC35823AA7BAF000D3728 /* DataStore.swift */; };
+		B49AB2BC27EE582500BE2701 /* EditBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AB2BB27EE582500BE2701 /* EditBookView.swift */; };
+		B49AB2BE27EE583500BE2701 /* EditBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AB2BD27EE583500BE2701 /* EditBookViewModel.swift */; };
+		B49AB2C027EE6E1100BE2701 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AB2BF27EE6E1100BE2701 /* BookCell.swift */; };
+		B49AB2C227EE6E1E00BE2701 /* BookCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AB2C127EE6E1E00BE2701 /* BookCellViewModel.swift */; };
 		B4BFEEAD27E7C3980056F379 /* ReadingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BFEEAC27E7C3980056F379 /* ReadingListViewModel.swift */; };
 		B4BFEEAF27E7C41F0056F379 /* ReadingListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BFEEAE27E7C41F0056F379 /* ReadingListApp.swift */; };
 		B4BFEEB127E8BC6F0056F379 /* ReadingList2.json in Resources */ = {isa = PBXBuildFile; fileRef = B4BFEEB027E8BC6F0056F379 /* ReadingList2.json */; };
@@ -51,6 +55,10 @@
 		B47AC35423AA7756000D3728 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		B47AC35623AA7999000D3728 /* ReadingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingList.swift; sourceTree = "<group>"; };
 		B47AC35823AA7BAF000D3728 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		B49AB2BB27EE582500BE2701 /* EditBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookView.swift; sourceTree = "<group>"; };
+		B49AB2BD27EE583500BE2701 /* EditBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookViewModel.swift; sourceTree = "<group>"; };
+		B49AB2BF27EE6E1100BE2701 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		B49AB2C127EE6E1E00BE2701 /* BookCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCellViewModel.swift; sourceTree = "<group>"; };
 		B4BFEEAC27E7C3980056F379 /* ReadingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListViewModel.swift; sourceTree = "<group>"; };
 		B4BFEEAE27E7C41F0056F379 /* ReadingListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListApp.swift; sourceTree = "<group>"; };
 		B4BFEEB027E8BC6F0056F379 /* ReadingList2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ReadingList2.json; sourceTree = "<group>"; };
@@ -99,6 +107,10 @@
 				B4BFEEAE27E7C41F0056F379 /* ReadingListApp.swift */,
 				B42D8F8D23B159C00062F018 /* ReadingListView.swift */,
 				B4BFEEAC27E7C3980056F379 /* ReadingListViewModel.swift */,
+				B49AB2BF27EE6E1100BE2701 /* BookCell.swift */,
+				B49AB2C127EE6E1E00BE2701 /* BookCellViewModel.swift */,
+				B49AB2BB27EE582500BE2701 /* EditBookView.swift */,
+				B49AB2BD27EE583500BE2701 /* EditBookViewModel.swift */,
 				B46F3FE323BBD14800A0A108 /* AddBookView.swift */,
 				B47AC33523A80C0D000D3728 /* Assets.xcassets */,
 				B47AC33A23A80C0D000D3728 /* LaunchScreen.storyboard */,
@@ -243,14 +255,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B49AB2BC27EE582500BE2701 /* EditBookView.swift in Sources */,
 				B46F3FE423BBD14800A0A108 /* AddBookView.swift in Sources */,
+				B49AB2C027EE6E1100BE2701 /* BookCell.swift in Sources */,
 				B42D8F8E23B159C00062F018 /* ReadingListView.swift in Sources */,
 				B4BFEEAF27E7C41F0056F379 /* ReadingListApp.swift in Sources */,
+				B49AB2C227EE6E1E00BE2701 /* BookCellViewModel.swift in Sources */,
 				B4BFEEAD27E7C3980056F379 /* ReadingListViewModel.swift in Sources */,
 				B47AC35723AA7999000D3728 /* ReadingList.swift in Sources */,
 				B47AC35323AA71F4000D3728 /* Author.swift in Sources */,
 				B47AC35523AA7756000D3728 /* Book.swift in Sources */,
 				B47AC35923AA7BAF000D3728 /* DataStore.swift in Sources */,
+				B49AB2BE27EE583500BE2701 /* EditBookViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +422,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ReadingListApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 7J7LD9SB6Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ReadingListApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -425,6 +442,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ReadingListApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 7J7LD9SB6Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ReadingListApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -444,6 +462,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7J7LD9SB6Q;
 				INFOPLIST_FILE = ReadingListTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -465,6 +484,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7J7LD9SB6Q;
 				INFOPLIST_FILE = ReadingListTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (

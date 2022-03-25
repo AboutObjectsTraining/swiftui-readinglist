@@ -10,7 +10,7 @@ struct ReadingListView: View
     var listOfBooks: some View {
         List {
             ForEach(viewModel.books) {
-                BookCell(book: $0)
+                BookCell(viewModel: viewModel.cellViewModel(for: $0))
             }
             .onDelete { indexSet in
                 deleteBooks(at: indexSet)
@@ -81,20 +81,6 @@ extension ReadingListView {
     }
 }
 
-struct BookCell: View {
-    let book: Book
-    var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text("\(book.title)")
-                .font(.headline)
-                .foregroundColor(Color.green)
-            Text("\(book.year) | \(book.author.fullName)")
-                .font(.subheadline)
-                .padding(.bottom, 6.0)
-        }
-    }
-}
-
 struct EditTitleView: View {
     @EnvironmentObject var viewModel: ReadingListViewModel
     
@@ -103,9 +89,9 @@ struct EditTitleView: View {
             Form {
                 TextField("Title", text: $viewModel.readingList.title)
                     .textFieldStyle(.roundedBorder)
+                    .padding(.vertical, 12)
             }
-            .padding(.top, 40)
-            .navigationTitle("Edit Title")
+            .navigationTitle("ReadingList Title")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: done, label: { Text("Done") })
