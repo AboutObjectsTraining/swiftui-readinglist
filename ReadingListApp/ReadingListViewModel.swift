@@ -6,20 +6,29 @@ import SwiftUI
 final class ReadingListViewModel: ObservableObject {
     let store: DataStore
     @Published var isAddingBook = false
+    @Published var isEditingTitle = false
     @Published var readingList: ReadingList
     @Published var books: [Book] = []
         
     init(store: DataStore = DataStore()) {
         self.store = store
-        
-        // TODO: fetch and save in background
-        self.readingList = store.fetch()
-        self.books = readingList.books
+        self.readingList = ReadingList(title: "Empty", books: [])
     }
 }
 
 // MARK: Actions
 extension ReadingListViewModel {
+    
+    func loadIfEmpty() {
+        guard readingList.books.isEmpty else { return }
+        
+        do {
+            readingList = try store.fetch()
+        } catch {
+            print("Unable to fetch ReadingList from store \(store)")
+        }
+        self.books = readingList.books
+    }
     
     func addBook(_ book: Book) {
         books.append(book)
@@ -36,7 +45,7 @@ extension ReadingListViewModel {
         save()
     }
     
-    private func save() {
+    func save() {
         readingList.books = books
         
         do {
@@ -47,6 +56,16 @@ extension ReadingListViewModel {
     }
 }
 
+#if DEBUG
+extension ReadingListViewModel {
+    static let empty = ReadingListViewModel()
+    static var loaded: ReadingListViewModel = {
+        let loaded = ReadingListViewModel()
+        loaded.loadIfEmpty()
+        return loaded
+    }()
+}
+#endif
 
 //final class AddBookViewModel: ObservableObject {
 //    var readingListVM: ReadingListViewModel

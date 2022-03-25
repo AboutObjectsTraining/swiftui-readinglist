@@ -2,10 +2,13 @@
 // See LICENSE.txt for this project's licensing information.
 
 import XCTest
+import Combine
 @testable import ReadingListApp
 
 private let encoder = JSONEncoder()
 private let decoder = JSONDecoder()
+
+private var subscriptions: Set<AnyCancellable> = []
 
 private let testData: JsonDictionary = [
     "id": "F345D178-F31B-4D71-9FBD-A684A974A68A",
@@ -83,11 +86,11 @@ class ModelTests: XCTestCase {
         let book1 = Book(title: "The Tempest", year: "2012", author: author)
         let book2 = Book(title: "Julius Ceasar", year: "2019", author: author)
         let readingList = ReadingList(title: "My Summer Reading", books: [book1, book2])
-        let storeController = DataStore(storeName: "TestReadingList", bundle: Bundle(for: type(of: self)))
+        let store = DataStore(storeName: "TestReadingList", bundle: Bundle(for: type(of: self)))
         
-        try! storeController.save(readingList: readingList)
-        XCTAssert(FileManager.default.fileExists(atPath: storeController.storeFileUrl.path))
-        print(storeController.storeFileUrl.path)
+        try! store.save(readingList: readingList)
+        XCTAssert(FileManager.default.fileExists(atPath: store.storeFileUrl.path))
+        print(store.storeFileUrl.path)
     }
     
     func testDecodeReadingList() {
@@ -95,11 +98,63 @@ class ModelTests: XCTestCase {
         let readingList = try! decoder.decode(ReadingList.self, from: data)
         print(readingList)
         
-        let storeController = DataStore(storeName: "TestReadingList", bundle: Bundle(for: type(of: self)))
-        try! storeController.save(readingList: readingList)
+        let store = DataStore(storeName: "TestReadingList", bundle: Bundle(for: type(of: self)))
+        try! store.save(readingList: readingList)
         
-        let fetchedReadingList = storeController.fetchedReadingList
+        let fetchedReadingList = store.fetch()
         print(fetchedReadingList)
         XCTAssertEqual(fetchedReadingList.books.count, 2)
+    }
+    
+    func testDecodeReadingListWithDataTask() {
+        let store = DataStore(storeName: "TestReadingList", bundle: Bundle(for: type(of: self)))
+        let dataTask = URLSession.shared.dataTask(with: store.storeFileUrl) { data, response, error in
+            let readingList = try! decoder.decode(ReadingList.self, from: data!)
+            print(readingList)
+        }
+        
+        dataTask.resume()
+    }
+    
+    func testFetchReadingListWithAsyncAwait() async throws {
+        let store = DataStore(storeName: "TestReadingList", bundle: Bundle(for: type(of: self)))
+        let readingList = try await store.fetchWithAsyncAwait()
+        print(readingList)
+    }
+    
+    func testFetchReadingListWithCombine() {
+        // FIXME: Not sure why this is currently broken
+    
+        var readingList: ReadingList?
+        
+        subscriptions.removeAll()
+        
+        let store = DataStore(storeName: "TestReadingList", bundle: Bundle(for: type(of: self)))
+        let url = store.storeFileUrl
+        let publisher = URLSession.shared.dataTaskPublisher(for: url)
+        
+        publisher
+            .breakpointOnError()
+            .map { data, response in
+                print(response)
+                print(String(data: data, encoding: .utf8)!)
+                return data
+            }
+            .breakpointOnError()
+            .decode(type: ReadingList.self, decoder: decoder)
+            .print()
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                print("Received completion \(completion)")
+            } receiveValue: {
+                readingList = $0
+            }
+            .store(in: &subscriptions)
+        
+        guard let readingList = readingList else {
+            fatalError("Unable to decode ReadingList at url \(store.storeFileUrl)")
+        }
+        
+        print(String(describing: readingList))
     }
 }
