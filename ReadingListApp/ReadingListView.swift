@@ -11,6 +11,7 @@ struct ReadingListView: View
         List {
             ForEach(viewModel.cellViewModels, id: \.book.id) { cellVM in
                 BookCell(viewModel: cellVM)
+                    .listRowBackground(Color.brown.opacity(0.1))
             }
             .onDelete { indexSet in
                 deleteBooks(at: indexSet)

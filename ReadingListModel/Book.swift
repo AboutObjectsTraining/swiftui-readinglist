@@ -28,6 +28,11 @@ struct Book: Codable, Identifiable
     var status = Status.notStarted
     var percentComplete = 0.0
     
+    var artworkUrl: URL {
+        let url = Bundle.main.path(forResource: title, ofType: "jpg") ?? ""
+        return URL(fileURLWithPath: url)
+    }
+    
     init(title: String = "", year: String = "", author: Author = Author()) {
         self.title = title
         self.year = year

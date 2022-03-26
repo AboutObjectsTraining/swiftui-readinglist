@@ -93,7 +93,7 @@ class ModelTests: XCTestCase {
         print(store.storeFileUrl.path)
     }
     
-    func testDecodeReadingList() {
+    func testDecodeReadingList() throws {
         let data = try! JSONSerialization.data(withJSONObject: testData)
         let readingList = try! decoder.decode(ReadingList.self, from: data)
         print(readingList)
@@ -101,7 +101,7 @@ class ModelTests: XCTestCase {
         let store = DataStore(storeName: "TestReadingList", bundle: Bundle(for: type(of: self)))
         try! store.save(readingList: readingList)
         
-        let fetchedReadingList = store.fetch()
+        let fetchedReadingList = try store.fetch()
         print(fetchedReadingList)
         XCTAssertEqual(fetchedReadingList.books.count, 2)
     }
