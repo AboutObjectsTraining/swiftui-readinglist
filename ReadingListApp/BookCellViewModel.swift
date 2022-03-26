@@ -4,9 +4,17 @@
 import SwiftUI
 
 final class BookCellViewModel: ObservableObject {
+    
+    private var updateBook: (_ book: Book) -> Void
+    
     @Published var book: Book
     
-    init(book: Book) {
+    init(book: Book, updateBook: @escaping (_ book: Book) -> Void) {
         self.book = book
+        self.updateBook = updateBook
+    }
+    
+    func makeEditBookViewModel() -> EditBookViewModel {
+        EditBookViewModel(book: book, updateBook: updateBook)
     }
 }

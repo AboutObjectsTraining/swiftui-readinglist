@@ -5,9 +5,17 @@ import SwiftUI
 
 final class EditBookViewModel: ObservableObject {
     
-    @Published var book: Book
+    private var updateBook: (_ book: Book) -> Void
     
-    init(book: Book) {
+    @Published var book: Book
+    @Published var isEditing = false
+    
+    init(book: Book, updateBook: @escaping (_ book: Book) -> Void) {
         self.book = book
+        self.updateBook = updateBook
+    }
+    
+    func update() {
+        updateBook(book)
     }
 }

@@ -25,7 +25,7 @@ extension ReadingListViewModel {
     
     private func makeCellViewModels() {
         cellViewModels = books.map {
-            BookCellViewModel(book: $0)
+            BookCellViewModel(book: $0, updateBook: update(book:))
         }
     }
 
@@ -54,7 +54,7 @@ extension ReadingListViewModel {
     
     func addBook(_ book: Book) {
         books.append(book)
-        cellViewModels.append(BookCellViewModel(book: book))
+        cellViewModels.append(BookCellViewModel(book: book, updateBook: update(book:)))
         save()
     }
     
@@ -64,6 +64,7 @@ extension ReadingListViewModel {
             return
         }
         books[index] = book
+        save()
     }
     
     func deleteBooks(at indexSet: IndexSet) {

@@ -20,7 +20,6 @@ struct ReadingListView: View
             }
         }
         .listStyle(GroupedListStyle())
-        .padding(.top, 20)
     }
     
     var emptyList: some View {
@@ -42,6 +41,7 @@ struct ReadingListView: View
                     listOfBooks
                 }
             }
+            .navigationViewStyle(.automatic)
             .navigationBarTitle(Text(viewModel.readingList.title))
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
@@ -113,15 +113,17 @@ struct ReadingListPreview: PreviewProvider {
 //            ReadingListView()
 //                .environment(\.colorScheme, .dark)
 //                .environmentObject(ReadingListViewModel.empty)
-            EditTitleView()
-                .environment(\.colorScheme, .dark)
-                .environmentObject(ReadingListViewModel.loaded)
             ReadingListView()
                 .environment(\.colorScheme, .dark)
                 .environmentObject(ReadingListViewModel.empty)
             ReadingListView()
                 .environment(\.colorScheme, .light)
                 .environmentObject(ReadingListViewModel.empty)
+//                .previewInterfaceOrientation(.landscapeRight)
+
+            EditTitleView()
+                .environment(\.colorScheme, .dark)
+                .environmentObject(ReadingListViewModel.loaded)
         }
     }
 }

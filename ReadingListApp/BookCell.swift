@@ -20,7 +20,7 @@ struct BookCell: View {
             .layoutPriority(1)
             
             NavigationLink {
-                EditBookView(viewModel: EditBookViewModel(book: viewModel.book))
+                EditBookView(viewModel: viewModel.makeEditBookViewModel())
             } label: { }
         }
     }
