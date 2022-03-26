@@ -52,6 +52,7 @@ struct ReadingListView: View
                     Button(action: editTitle,
                            label: { Image(systemName: "square.and.pencil") })
                     EditButton()
+                        .padding(.trailing, 8)
                 }
             }
         }

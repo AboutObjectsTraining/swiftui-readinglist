@@ -11,12 +11,21 @@ struct AddBookView: View {
         NavigationView {
             Form {
                 Group {
-                    AddBookCell(title: "Title", placeholder: "The Tempest", text: $book.title)
-                    AddBookCell(title: "Year", placeholder: "1999", text: $book.year)
-                    AddBookCell(title: "First Name", placeholder: "William", text: $book.author.firstName)
-                    AddBookCell(title: "Last Name", placeholder: "Shakespeare", text: $book.author.lastName)
+                    AddBookCell(title: "Title",
+                                placeholder: "The Tempest",
+                                text: $book.title)
+                    AddBookCell(title: "Year",
+                                placeholder: "1999",
+                                text: $book.year)
+                    AddBookCell(title: "First Name",
+                                placeholder: "William",
+                                text: $book.author.firstName)
+                    AddBookCell(title: "Last Name",
+                                placeholder: "Shakespeare",
+                                text: $book.author.lastName)
                 }
                 .listRowSeparator(.hidden)
+                .buttonStyle(.plain)
             }
             .interactiveDismissDisabled()
             .foregroundColor(.secondary)
@@ -51,43 +60,17 @@ struct AddBookCell: View {
     var body: some View {
         HStack() {
             Group {
-                Text(title)
-                    .multilineTextAlignment(.trailing)
-                    .frame(width: 100)
-                TextField(placeholder, text: $text)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .clearButton(text: $text)
+                HStack {
+                    Spacer()
+                    Text(title)
+                }
+                .frame(width: 92)
+                TextFieldWithClearButton(placeholder: placeholder,
+                                         text: $text)
             }
             .padding(.vertical, 4.0)
         }
-    }
-}
-
-extension View {
-    func clearButton(text: Binding<String>) -> some View {
-        modifier(ClearButton(text: text))
-    }
-}
-
-struct ClearButton: ViewModifier {
-    @Binding var text: String
-    
-    public func body(content: Content) -> some View {
-        ZStack(alignment: .trailing) {
-            content
-            if !text.isEmpty {
-                Button(
-                    action: {
-                        self.text = ""
-                    },
-                    label: {
-                        Image(systemName: "multiply.circle.fill")
-                            .foregroundColor(Color(UIColor.opaqueSeparator))
-                    }
-                )
-                .padding(.trailing, 8)
-            }
-        }
+        .padding(.leading, -10)
     }
 }
 

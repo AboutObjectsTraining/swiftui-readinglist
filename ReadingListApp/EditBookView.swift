@@ -36,6 +36,7 @@ struct EditBookView: View {
                             .fontWeight(viewModel.isEditing ? .semibold : .regular)
                     }
                 )
+                .padding(.horizontal, 8)
             }
         }
     }
@@ -45,7 +46,9 @@ struct EditBookView: View {
     }
     
     private func edit() {
-        viewModel.isEditing.toggle()
+        withAnimation(.easeInOut(duration: 0.3)) {
+            viewModel.isEditing.toggle()
+        }
         
         if !viewModel.isEditing {
             viewModel.update()
@@ -64,7 +67,6 @@ struct TextFieldCell: View {
             TextField(title, text: $value)
                 .conditionalTextFieldStyle(editing: isEditing)
         }
-        .animation(.easeInOut, value: isEditing)
     }
     
     init(_ title: String, value: Binding<String>, editing: Bool) {

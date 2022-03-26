@@ -23,6 +23,7 @@
 		B49AB2BE27EE583500BE2701 /* EditBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AB2BD27EE583500BE2701 /* EditBookViewModel.swift */; };
 		B49AB2C027EE6E1100BE2701 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AB2BF27EE6E1100BE2701 /* BookCell.swift */; };
 		B49AB2C227EE6E1E00BE2701 /* BookCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AB2C127EE6E1E00BE2701 /* BookCellViewModel.swift */; };
+		B49AB2C427EF7FE600BE2701 /* TextFieldWithClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AB2C327EF7FE600BE2701 /* TextFieldWithClearButton.swift */; };
 		B4BFEEAD27E7C3980056F379 /* ReadingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BFEEAC27E7C3980056F379 /* ReadingListViewModel.swift */; };
 		B4BFEEAF27E7C41F0056F379 /* ReadingListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BFEEAE27E7C41F0056F379 /* ReadingListApp.swift */; };
 		B4BFEEB127E8BC6F0056F379 /* ReadingList2.json in Resources */ = {isa = PBXBuildFile; fileRef = B4BFEEB027E8BC6F0056F379 /* ReadingList2.json */; };
@@ -59,6 +60,7 @@
 		B49AB2BD27EE583500BE2701 /* EditBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookViewModel.swift; sourceTree = "<group>"; };
 		B49AB2BF27EE6E1100BE2701 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		B49AB2C127EE6E1E00BE2701 /* BookCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCellViewModel.swift; sourceTree = "<group>"; };
+		B49AB2C327EF7FE600BE2701 /* TextFieldWithClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithClearButton.swift; sourceTree = "<group>"; };
 		B4BFEEAC27E7C3980056F379 /* ReadingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListViewModel.swift; sourceTree = "<group>"; };
 		B4BFEEAE27E7C41F0056F379 /* ReadingListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListApp.swift; sourceTree = "<group>"; };
 		B4BFEEB027E8BC6F0056F379 /* ReadingList2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ReadingList2.json; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				B49AB2BB27EE582500BE2701 /* EditBookView.swift */,
 				B49AB2BD27EE583500BE2701 /* EditBookViewModel.swift */,
 				B46F3FE323BBD14800A0A108 /* AddBookView.swift */,
+				B49AB2C327EF7FE600BE2701 /* TextFieldWithClearButton.swift */,
 				B47AC33523A80C0D000D3728 /* Assets.xcassets */,
 				B47AC33A23A80C0D000D3728 /* LaunchScreen.storyboard */,
 				B47AC33D23A80C0D000D3728 /* Info.plist */,
@@ -261,6 +264,7 @@
 				B42D8F8E23B159C00062F018 /* ReadingListView.swift in Sources */,
 				B4BFEEAF27E7C41F0056F379 /* ReadingListApp.swift in Sources */,
 				B49AB2C227EE6E1E00BE2701 /* BookCellViewModel.swift in Sources */,
+				B49AB2C427EF7FE600BE2701 /* TextFieldWithClearButton.swift in Sources */,
 				B4BFEEAD27E7C3980056F379 /* ReadingListViewModel.swift in Sources */,
 				B47AC35723AA7999000D3728 /* ReadingList.swift in Sources */,
 				B47AC35323AA71F4000D3728 /* Author.swift in Sources */,
