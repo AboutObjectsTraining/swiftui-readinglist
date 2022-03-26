@@ -10,13 +10,14 @@ struct AddBookView: View {
     var body: some View {
         NavigationView {
             Form {
-                Group {
+                Section {
                     AddBookCell(title: "Title",
                                 placeholder: "The Tempest",
                                 text: $book.title)
                     AddBookCell(title: "Year",
                                 placeholder: "1999",
                                 text: $book.year)
+                    .keyboardType(.numberPad)
                     AddBookCell(title: "First Name",
                                 placeholder: "William",
                                 text: $book.author.firstName)

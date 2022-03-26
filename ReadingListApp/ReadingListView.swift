@@ -9,8 +9,8 @@ struct ReadingListView: View
     
     var listOfBooks: some View {
         List {
-            ForEach(viewModel.books) {
-                BookCell(viewModel: viewModel.cellViewModel(for: $0))
+            ForEach(viewModel.cellViewModels, id: \.book.id) { cellVM in
+                BookCell(viewModel: cellVM)
             }
             .onDelete { indexSet in
                 deleteBooks(at: indexSet)
@@ -35,7 +35,7 @@ struct ReadingListView: View
     var body: some View {
         NavigationView {
             Group {
-                if viewModel.books.isEmpty {
+                if viewModel.cellViewModels.isEmpty {
                     emptyList
                 } else {
                     listOfBooks

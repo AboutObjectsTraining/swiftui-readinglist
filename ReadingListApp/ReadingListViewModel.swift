@@ -7,16 +7,14 @@ final class ReadingListViewModel: ObservableObject {
     let store: DataStore
     @Published var isAddingBook = false
     @Published var isEditingTitle = false
-    @Published var readingList: ReadingList
-    @Published var books: [Book] = [] {
-        didSet { makeCellViewModels() }
+    @Published var readingList: ReadingList {
+        didSet { makeCellViewModels()  }
     }
-    
-    private var cellViewModels: [BookCellViewModel] = []
+    @Published var cellViewModels: [BookCellViewModel] = []
         
     init(store: DataStore = DataStore()) {
         self.store = store
-        self.readingList = ReadingList(title: "Empty", books: [])
+        readingList = ReadingList(title: "Empty", books: [])
     }
 }
 
@@ -24,7 +22,7 @@ final class ReadingListViewModel: ObservableObject {
 extension ReadingListViewModel {
     
     private func makeCellViewModels() {
-        cellViewModels = books.map {
+        cellViewModels = readingList.books.map {
             BookCellViewModel(book: $0, updateBook: update(book:))
         }
     }
@@ -49,38 +47,35 @@ extension ReadingListViewModel {
         } catch {
             print("Unable to fetch ReadingList from store \(store)")
         }
-        self.books = readingList.books
     }
     
     func addBook(_ book: Book) {
-        books.append(book)
-        cellViewModels.append(BookCellViewModel(book: book, updateBook: update(book:)))
+        let newCellVM = BookCellViewModel(book: book, updateBook: update(book:))
+        cellViewModels.append(newCellVM)
         save()
     }
     
     func update(book: Book) {
-        guard let index = books.firstIndex(where: { $0.id == book.id }) else {
-            print("Unable to find book \(book)")
-            return
+        guard let cellVM = cellViewModels.first(where: { $0.book.id == book.id }) else {
+            fatalError("\(#function) - Unable to find book \(book)")
         }
-        books[index] = book
+        cellVM.book = book
         save()
     }
     
     func deleteBooks(at indexSet: IndexSet) {
-        books.remove(atOffsets: indexSet)
         cellViewModels.remove(atOffsets: indexSet)
         save()
     }
     
     func moveBooks(fromOffsets: IndexSet, toOffset: Int) {
-        books.move(fromOffsets: fromOffsets, toOffset: toOffset)
         cellViewModels.move(fromOffsets: fromOffsets, toOffset: toOffset)
         save()
     }
     
     func save() {
-        readingList.books = books
+        readingList.books = cellViewModels.map { $0.book }
+        
         do {
             try store.save(readingList: readingList)
         } catch {
