@@ -5,18 +5,11 @@ import Foundation
 
 struct Book: Codable, Identifiable
 {
-    enum Status: String, Codable {
-        case notStarted = "Not Started"
-        case inProgress = "In Progress"
-        case finished = "Finished"
-    }
-    
     enum CodingKeys: String, CodingKey {
         case id
         case title
         case year
         case author
-        case status
         case percentComplete
     }
     
@@ -25,11 +18,12 @@ struct Book: Codable, Identifiable
     var year: String
     var author: Author
     
-    var status = Status.notStarted
     var percentComplete = 0.0
     
     var artworkUrl: URL {
-        let url = Bundle.main.path(forResource: title, ofType: "jpg") ?? ""
+        let title = title.trimmingCharacters(in: .whitespaces)
+        let name = title.isEmpty ? "unknown" : title
+        let url = Bundle.main.path(forResource: name, ofType: "jpg") ?? ""
         return URL(fileURLWithPath: url)
     }
     
@@ -46,7 +40,6 @@ struct Book: Codable, Identifiable
         year = try container.decode(String.self, forKey: .year)
         author = try container.decode(Author.self, forKey: .author)
         
-        status = try container.decodeIfPresent(Book.Status.self, forKey: .status) ?? .notStarted
         percentComplete = try container.decodeIfPresent(Double.self, forKey: .percentComplete) ?? 0.0
     }
 }
@@ -61,7 +54,6 @@ extension Book
         try container.encode(year, forKey: .year)
         try container.encode(author, forKey: .author)
         
-        try container.encode(status, forKey: .status)
         try container.encode(percentComplete, forKey: .percentComplete)
     }
 }

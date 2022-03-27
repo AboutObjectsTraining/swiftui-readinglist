@@ -25,32 +25,22 @@
 		B49AB2C227EE6E1E00BE2701 /* BookCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AB2C127EE6E1E00BE2701 /* BookCellViewModel.swift */; };
 		B49AB2C427EF7FE600BE2701 /* TextFieldWithClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AB2C327EF7FE600BE2701 /* TextFieldWithClearButton.swift */; };
 		B49AB2C627EF9A4D00BE2701 /* AvailableBooks.json in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2C527EF9A4D00BE2701 /* AvailableBooks.json */; };
-		B49AB2EA27EFB77F00BE2701 /* Winnie the Pooh.png in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2CE27EFB77F00BE2701 /* Winnie the Pooh.png */; };
-		B49AB2EB27EFB77F00BE2701 /* Crime and Punishment.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2CF27EFB77F00BE2701 /* Crime and Punishment.jpg */; };
-		B49AB2EC27EFB77F00BE2701 /* 100 Greatest - A Midsummer Night's Dream.png in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2D027EFB77F00BE2701 /* 100 Greatest - A Midsummer Night's Dream.png */; };
-		B49AB2ED27EFB77F00BE2701 /* The Cossacks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2D127EFB77F00BE2701 /* The Cossacks.jpg */; };
-		B49AB2EE27EFB77F00BE2701 /* Romeo and Juliet - Folger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2D227EFB77F00BE2701 /* Romeo and Juliet - Folger.jpg */; };
 		B49AB2EF27EFB77F00BE2701 /* Julius Caesar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2D327EFB77F00BE2701 /* Julius Caesar.jpg */; };
-		B49AB2F027EFB77F00BE2701 /* The Brothers Karamozov.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2D427EFB77F00BE2701 /* The Brothers Karamozov.jpg */; };
 		B49AB2F127EFB77F00BE2701 /* War and Peace.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2D527EFB77F00BE2701 /* War and Peace.jpg */; };
 		B49AB2F227EFB77F00BE2701 /* The Possessed.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2D627EFB77F00BE2701 /* The Possessed.jpg */; };
 		B49AB2F327EFB77F00BE2701 /* Great Expectations.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2D727EFB77F00BE2701 /* Great Expectations.jpg */; };
 		B49AB2F427EFB77F00BE2701 /* Much Ado About Nothing.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2D827EFB77F00BE2701 /* Much Ado About Nothing.jpg */; };
 		B49AB2F527EFB77F00BE2701 /* The Odyssey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2D927EFB77F00BE2701 /* The Odyssey.jpg */; };
-		B49AB2F627EFB77F00BE2701 /* A Midsummer Night's Dream.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2DA27EFB77F00BE2701 /* A Midsummer Night's Dream.jpg */; };
 		B49AB2F827EFB77F00BE2701 /* The Time Machine.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2DC27EFB77F00BE2701 /* The Time Machine.jpg */; };
-		B49AB2F927EFB77F00BE2701 /* Anna Karenina.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2DD27EFB77F00BE2701 /* Anna Karenina.jpg */; };
 		B49AB2FA27EFB77F00BE2701 /* Romeo and Juliet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2DE27EFB77F00BE2701 /* Romeo and Juliet.jpg */; };
-		B49AB2FB27EFB77F00BE2701 /* The Invisible Man.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2DF27EFB77F00BE2701 /* The Invisible Man.jpg */; };
 		B49AB2FC27EFB77F00BE2701 /* The Iliad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2E027EFB77F00BE2701 /* The Iliad.jpg */; };
 		B49AB2FD27EFB77F00BE2701 /* Treasure Island.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2E127EFB77F00BE2701 /* Treasure Island.jpg */; };
-		B49AB2FE27EFB77F00BE2701 /* The Mystery of Edwin Drood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2E227EFB77F00BE2701 /* The Mystery of Edwin Drood.jpg */; };
 		B49AB2FF27EFB77F00BE2701 /* Pride and Prejudice.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2E327EFB77F00BE2701 /* Pride and Prejudice.jpg */; };
 		B49AB30027EFB77F00BE2701 /* War of the Worlds.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2E427EFB77F00BE2701 /* War of the Worlds.jpg */; };
 		B49AB30127EFB77F00BE2701 /* 1984.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2E527EFB77F00BE2701 /* 1984.jpg */; };
 		B49AB30227EFB77F00BE2701 /* Emma.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2E627EFB77F00BE2701 /* Emma.jpg */; };
-		B49AB30427EFB77F00BE2701 /* The Wrong Box.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2E827EFB77F00BE2701 /* The Wrong Box.jpg */; };
-		B49AB30527EFB77F00BE2701 /* The Red House Mystery.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2E927EFB77F00BE2701 /* The Red House Mystery.jpg */; };
+		B49AB30A27F0B51300BE2701 /* The Brothers Karamozov.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB30827F0B51300BE2701 /* The Brothers Karamozov.jpg */; };
+		B49AB30B27F0B51300BE2701 /* Anna Karenina.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB30927F0B51300BE2701 /* Anna Karenina.jpg */; };
 		B4BFEEAD27E7C3980056F379 /* ReadingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BFEEAC27E7C3980056F379 /* ReadingListViewModel.swift */; };
 		B4BFEEAF27E7C41F0056F379 /* ReadingListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BFEEAE27E7C41F0056F379 /* ReadingListApp.swift */; };
 		B4BFEEB127E8BC6F0056F379 /* ReadingList2.json in Resources */ = {isa = PBXBuildFile; fileRef = B4BFEEB027E8BC6F0056F379 /* ReadingList2.json */; };
@@ -89,32 +79,22 @@
 		B49AB2C127EE6E1E00BE2701 /* BookCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCellViewModel.swift; sourceTree = "<group>"; };
 		B49AB2C327EF7FE600BE2701 /* TextFieldWithClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithClearButton.swift; sourceTree = "<group>"; };
 		B49AB2C527EF9A4D00BE2701 /* AvailableBooks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AvailableBooks.json; sourceTree = "<group>"; };
-		B49AB2CE27EFB77F00BE2701 /* Winnie the Pooh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Winnie the Pooh.png"; sourceTree = "<group>"; };
-		B49AB2CF27EFB77F00BE2701 /* Crime and Punishment.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Crime and Punishment.jpg"; sourceTree = "<group>"; };
-		B49AB2D027EFB77F00BE2701 /* 100 Greatest - A Midsummer Night's Dream.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "100 Greatest - A Midsummer Night's Dream.png"; sourceTree = "<group>"; };
-		B49AB2D127EFB77F00BE2701 /* The Cossacks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "The Cossacks.jpg"; sourceTree = "<group>"; };
-		B49AB2D227EFB77F00BE2701 /* Romeo and Juliet - Folger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Romeo and Juliet - Folger.jpg"; sourceTree = "<group>"; };
 		B49AB2D327EFB77F00BE2701 /* Julius Caesar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Julius Caesar.jpg"; sourceTree = "<group>"; };
-		B49AB2D427EFB77F00BE2701 /* The Brothers Karamozov.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "The Brothers Karamozov.jpg"; sourceTree = "<group>"; };
 		B49AB2D527EFB77F00BE2701 /* War and Peace.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "War and Peace.jpg"; sourceTree = "<group>"; };
 		B49AB2D627EFB77F00BE2701 /* The Possessed.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "The Possessed.jpg"; sourceTree = "<group>"; };
 		B49AB2D727EFB77F00BE2701 /* Great Expectations.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Great Expectations.jpg"; sourceTree = "<group>"; };
 		B49AB2D827EFB77F00BE2701 /* Much Ado About Nothing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Much Ado About Nothing.jpg"; sourceTree = "<group>"; };
 		B49AB2D927EFB77F00BE2701 /* The Odyssey.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "The Odyssey.jpg"; sourceTree = "<group>"; };
-		B49AB2DA27EFB77F00BE2701 /* A Midsummer Night's Dream.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "A Midsummer Night's Dream.jpg"; sourceTree = "<group>"; };
 		B49AB2DC27EFB77F00BE2701 /* The Time Machine.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "The Time Machine.jpg"; sourceTree = "<group>"; };
-		B49AB2DD27EFB77F00BE2701 /* Anna Karenina.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Anna Karenina.jpg"; sourceTree = "<group>"; };
 		B49AB2DE27EFB77F00BE2701 /* Romeo and Juliet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Romeo and Juliet.jpg"; sourceTree = "<group>"; };
-		B49AB2DF27EFB77F00BE2701 /* The Invisible Man.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "The Invisible Man.jpg"; sourceTree = "<group>"; };
 		B49AB2E027EFB77F00BE2701 /* The Iliad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "The Iliad.jpg"; sourceTree = "<group>"; };
 		B49AB2E127EFB77F00BE2701 /* Treasure Island.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Treasure Island.jpg"; sourceTree = "<group>"; };
-		B49AB2E227EFB77F00BE2701 /* The Mystery of Edwin Drood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "The Mystery of Edwin Drood.jpg"; sourceTree = "<group>"; };
 		B49AB2E327EFB77F00BE2701 /* Pride and Prejudice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Pride and Prejudice.jpg"; sourceTree = "<group>"; };
 		B49AB2E427EFB77F00BE2701 /* War of the Worlds.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "War of the Worlds.jpg"; sourceTree = "<group>"; };
 		B49AB2E527EFB77F00BE2701 /* 1984.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1984.jpg; sourceTree = "<group>"; };
 		B49AB2E627EFB77F00BE2701 /* Emma.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Emma.jpg; sourceTree = "<group>"; };
-		B49AB2E827EFB77F00BE2701 /* The Wrong Box.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "The Wrong Box.jpg"; sourceTree = "<group>"; };
-		B49AB2E927EFB77F00BE2701 /* The Red House Mystery.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "The Red House Mystery.jpg"; sourceTree = "<group>"; };
+		B49AB30827F0B51300BE2701 /* The Brothers Karamozov.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "The Brothers Karamozov.jpg"; sourceTree = "<group>"; };
+		B49AB30927F0B51300BE2701 /* Anna Karenina.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Anna Karenina.jpg"; sourceTree = "<group>"; };
 		B4BFEEAC27E7C3980056F379 /* ReadingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListViewModel.swift; sourceTree = "<group>"; };
 		B4BFEEAE27E7C41F0056F379 /* ReadingListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListApp.swift; sourceTree = "<group>"; };
 		B4BFEEB027E8BC6F0056F379 /* ReadingList2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ReadingList2.json; sourceTree = "<group>"; };
@@ -213,32 +193,22 @@
 		B49AB2CD27EFB77F00BE2701 /* Cover Images */ = {
 			isa = PBXGroup;
 			children = (
-				B49AB2CE27EFB77F00BE2701 /* Winnie the Pooh.png */,
-				B49AB2CF27EFB77F00BE2701 /* Crime and Punishment.jpg */,
-				B49AB2D027EFB77F00BE2701 /* 100 Greatest - A Midsummer Night's Dream.png */,
-				B49AB2D127EFB77F00BE2701 /* The Cossacks.jpg */,
-				B49AB2D227EFB77F00BE2701 /* Romeo and Juliet - Folger.jpg */,
-				B49AB2D327EFB77F00BE2701 /* Julius Caesar.jpg */,
-				B49AB2D427EFB77F00BE2701 /* The Brothers Karamozov.jpg */,
-				B49AB2D527EFB77F00BE2701 /* War and Peace.jpg */,
-				B49AB2D627EFB77F00BE2701 /* The Possessed.jpg */,
-				B49AB2D727EFB77F00BE2701 /* Great Expectations.jpg */,
-				B49AB2D827EFB77F00BE2701 /* Much Ado About Nothing.jpg */,
-				B49AB2D927EFB77F00BE2701 /* The Odyssey.jpg */,
-				B49AB2DA27EFB77F00BE2701 /* A Midsummer Night's Dream.jpg */,
-				B49AB2DC27EFB77F00BE2701 /* The Time Machine.jpg */,
-				B49AB2DD27EFB77F00BE2701 /* Anna Karenina.jpg */,
-				B49AB2DE27EFB77F00BE2701 /* Romeo and Juliet.jpg */,
-				B49AB2DF27EFB77F00BE2701 /* The Invisible Man.jpg */,
-				B49AB2E027EFB77F00BE2701 /* The Iliad.jpg */,
-				B49AB2E127EFB77F00BE2701 /* Treasure Island.jpg */,
-				B49AB2E227EFB77F00BE2701 /* The Mystery of Edwin Drood.jpg */,
-				B49AB2E327EFB77F00BE2701 /* Pride and Prejudice.jpg */,
-				B49AB2E427EFB77F00BE2701 /* War of the Worlds.jpg */,
+				B49AB30927F0B51300BE2701 /* Anna Karenina.jpg */,
 				B49AB2E527EFB77F00BE2701 /* 1984.jpg */,
 				B49AB2E627EFB77F00BE2701 /* Emma.jpg */,
-				B49AB2E827EFB77F00BE2701 /* The Wrong Box.jpg */,
-				B49AB2E927EFB77F00BE2701 /* The Red House Mystery.jpg */,
+				B49AB2D727EFB77F00BE2701 /* Great Expectations.jpg */,
+				B49AB2D327EFB77F00BE2701 /* Julius Caesar.jpg */,
+				B49AB2D827EFB77F00BE2701 /* Much Ado About Nothing.jpg */,
+				B49AB2E327EFB77F00BE2701 /* Pride and Prejudice.jpg */,
+				B49AB2DE27EFB77F00BE2701 /* Romeo and Juliet.jpg */,
+				B49AB30827F0B51300BE2701 /* The Brothers Karamozov.jpg */,
+				B49AB2E027EFB77F00BE2701 /* The Iliad.jpg */,
+				B49AB2D627EFB77F00BE2701 /* The Possessed.jpg */,
+				B49AB2D927EFB77F00BE2701 /* The Odyssey.jpg */,
+				B49AB2DC27EFB77F00BE2701 /* The Time Machine.jpg */,
+				B49AB2E127EFB77F00BE2701 /* Treasure Island.jpg */,
+				B49AB2D527EFB77F00BE2701 /* War and Peace.jpg */,
+				B49AB2E427EFB77F00BE2701 /* War of the Worlds.jpg */,
 			);
 			path = "Cover Images";
 			sourceTree = "<group>";
@@ -325,37 +295,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				B49AB2F827EFB77F00BE2701 /* The Time Machine.jpg in Resources */,
-				B49AB2FB27EFB77F00BE2701 /* The Invisible Man.jpg in Resources */,
 				B49AB2F527EFB77F00BE2701 /* The Odyssey.jpg in Resources */,
-				B49AB30427EFB77F00BE2701 /* The Wrong Box.jpg in Resources */,
-				B49AB2F627EFB77F00BE2701 /* A Midsummer Night's Dream.jpg in Resources */,
 				B49AB2EF27EFB77F00BE2701 /* Julius Caesar.jpg in Resources */,
 				B49AB2F327EFB77F00BE2701 /* Great Expectations.jpg in Resources */,
+				B49AB30A27F0B51300BE2701 /* The Brothers Karamozov.jpg in Resources */,
 				B49AB30127EFB77F00BE2701 /* 1984.jpg in Resources */,
 				B49AB30027EFB77F00BE2701 /* War of the Worlds.jpg in Resources */,
 				B47AC33C23A80C0D000D3728 /* LaunchScreen.storyboard in Resources */,
 				B49AB2F427EFB77F00BE2701 /* Much Ado About Nothing.jpg in Resources */,
-				B49AB30527EFB77F00BE2701 /* The Red House Mystery.jpg in Resources */,
 				B47AC33923A80C0D000D3728 /* Preview Assets.xcassets in Resources */,
 				B49AB2F127EFB77F00BE2701 /* War and Peace.jpg in Resources */,
-				B49AB2EC27EFB77F00BE2701 /* 100 Greatest - A Midsummer Night's Dream.png in Resources */,
-				B49AB2F927EFB77F00BE2701 /* Anna Karenina.jpg in Resources */,
 				B49AB2FF27EFB77F00BE2701 /* Pride and Prejudice.jpg in Resources */,
 				B49AB2C627EF9A4D00BE2701 /* AvailableBooks.json in Resources */,
 				B49AB2FC27EFB77F00BE2701 /* The Iliad.jpg in Resources */,
-				B49AB2FE27EFB77F00BE2701 /* The Mystery of Edwin Drood.jpg in Resources */,
 				B4BFEEB127E8BC6F0056F379 /* ReadingList2.json in Resources */,
-				B49AB2EE27EFB77F00BE2701 /* Romeo and Juliet - Folger.jpg in Resources */,
-				B49AB2EB27EFB77F00BE2701 /* Crime and Punishment.jpg in Resources */,
 				B49AB30227EFB77F00BE2701 /* Emma.jpg in Resources */,
 				B49AB2F227EFB77F00BE2701 /* The Possessed.jpg in Resources */,
-				B49AB2ED27EFB77F00BE2701 /* The Cossacks.jpg in Resources */,
+				B49AB30B27F0B51300BE2701 /* Anna Karenina.jpg in Resources */,
 				B42D8F9023B15F600062F018 /* ReadingList.json in Resources */,
-				B49AB2F027EFB77F00BE2701 /* The Brothers Karamozov.jpg in Resources */,
 				B49AB2FD27EFB77F00BE2701 /* Treasure Island.jpg in Resources */,
 				B49AB2FA27EFB77F00BE2701 /* Romeo and Juliet.jpg in Resources */,
 				B47AC33623A80C0D000D3728 /* Assets.xcassets in Resources */,
-				B49AB2EA27EFB77F00BE2701 /* Winnie the Pooh.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

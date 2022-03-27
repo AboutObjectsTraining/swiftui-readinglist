@@ -15,6 +15,8 @@ struct EditBookView: View {
                 TextFieldCell("Year",
                               value: $viewModel.book.year,
                               editing: viewModel.isEditing)
+                SliderCell(percentComplete: $viewModel.book.percentComplete,
+                           editing: viewModel.isEditing)
             }
             Section("Author") {
                 TextFieldCell("First Name",
@@ -60,27 +62,62 @@ struct EditBookView: View {
     }
 }
 
+struct SliderCell: View {
+    @Binding var percentComplete: Double
+    let editing: Bool
+    
+    var body: some View {
+        VStack (alignment: .leading, spacing: 0) {
+            Text("Percent Complete")
+                .foregroundColor(.brown.opacity(0.5))
+                .font(.caption)
+                .padding(.bottom, 0)
+            
+            if editing {
+                Slider(value: $percentComplete, in: (0.0...1.0), step: 0.1)
+                    .padding(.vertical, 6)
+            } else {
+                Text(percentComplete,
+                     format: FloatingPointFormatStyle.Percent()
+                    .precision(.fractionLength(0))
+                )
+                .padding(.vertical, 6)
+            }
+        }
+        .listRowBackground(Color.brown.opacity(0.1))
+    }
+}
+
 struct ImageCell: View {
     let url: URL
     
     var body: some View {
         HStack {
             Spacer()
-            AsyncImage(url: url) { phase in
-                if let image = phase.image {
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 180)
-                        .shadow(color: .black.opacity(0.5), radius: 12, x: 0, y: 3)
-                        .padding(.vertical, 18)
-                        .layoutPriority(1)
-                } else if phase.error == nil {
-                    ProgressView()
-                } else {
-                    Color.red
+            Group {
+                AsyncImage(url: url) { phase in
+                    if let image = phase.image {
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    } else if phase.error == nil {
+                        ProgressView()
+                    } else {
+                        ZStack(alignment: .center) {
+                            Color.red
+                                .frame(width: 120)
+                            Image(systemName: "photo.circle")
+                                .imageScale(.large)
+                                .font(.system(size: 44))
+                                .foregroundColor(.white)
+                        }
+                    }
                 }
             }
+            .frame(height: 180)
+            .shadow(color: .black.opacity(0.5), radius: 12, x: 0, y: 3)
+            .padding(.vertical, 18)
+            .layoutPriority(1)
             Spacer()
         }
     }
@@ -92,9 +129,11 @@ struct TextFieldCell: View {
     @Binding var value: String
     
     var body: some View {
-        HStack(alignment: .firstTextBaseline, spacing: 8) {
+        VStack(alignment: .leading) {
             Text(title)
                 .foregroundColor(.brown.opacity(0.5))
+                .font(.caption)
+                .padding(.bottom, -4)
             TextField(title, text: $value)
                 .conditionalTextFieldStyle(editing: isEditing)
         }
@@ -118,19 +157,19 @@ struct ConditionalTextFieldStyle: ViewModifier {
     let isEditing: Bool
     
     func body(content: Content) -> some View {
-        if isEditing {
-            content
-                .textFieldStyle(.roundedBorder)
-                .padding(.vertical, 6)
-                .multilineTextAlignment(.leading)
-                .disabled(false)
-        } else {
-            content
-                .textFieldStyle(.plain)
-                .padding(.vertical, 12)
-                .multilineTextAlignment(.trailing)
-                .disabled(true)
+        Group {
+            if isEditing {
+                content
+                    .textFieldStyle(.roundedBorder)
+                    .disabled(false)
+            } else {
+                content
+                    .textFieldStyle(.plain)
+                    .disabled(true)
+            }
         }
+        .padding(.bottom, 6)
+        .multilineTextAlignment(.leading)
     }
 }
 
