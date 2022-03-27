@@ -24,7 +24,6 @@
 		B49AB2C027EE6E1100BE2701 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AB2BF27EE6E1100BE2701 /* BookCell.swift */; };
 		B49AB2C227EE6E1E00BE2701 /* BookCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AB2C127EE6E1E00BE2701 /* BookCellViewModel.swift */; };
 		B49AB2C427EF7FE600BE2701 /* TextFieldWithClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AB2C327EF7FE600BE2701 /* TextFieldWithClearButton.swift */; };
-		B49AB2C627EF9A4D00BE2701 /* AvailableBooks.json in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2C527EF9A4D00BE2701 /* AvailableBooks.json */; };
 		B49AB2EF27EFB77F00BE2701 /* Julius Caesar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2D327EFB77F00BE2701 /* Julius Caesar.jpg */; };
 		B49AB2F127EFB77F00BE2701 /* War and Peace.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2D527EFB77F00BE2701 /* War and Peace.jpg */; };
 		B49AB2F227EFB77F00BE2701 /* The Possessed.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2D627EFB77F00BE2701 /* The Possessed.jpg */; };
@@ -43,7 +42,6 @@
 		B49AB30B27F0B51300BE2701 /* Anna Karenina.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB30927F0B51300BE2701 /* Anna Karenina.jpg */; };
 		B4BFEEAD27E7C3980056F379 /* ReadingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BFEEAC27E7C3980056F379 /* ReadingListViewModel.swift */; };
 		B4BFEEAF27E7C41F0056F379 /* ReadingListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BFEEAE27E7C41F0056F379 /* ReadingListApp.swift */; };
-		B4BFEEB127E8BC6F0056F379 /* ReadingList2.json in Resources */ = {isa = PBXBuildFile; fileRef = B4BFEEB027E8BC6F0056F379 /* ReadingList2.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +76,6 @@
 		B49AB2BF27EE6E1100BE2701 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		B49AB2C127EE6E1E00BE2701 /* BookCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCellViewModel.swift; sourceTree = "<group>"; };
 		B49AB2C327EF7FE600BE2701 /* TextFieldWithClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithClearButton.swift; sourceTree = "<group>"; };
-		B49AB2C527EF9A4D00BE2701 /* AvailableBooks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AvailableBooks.json; sourceTree = "<group>"; };
 		B49AB2D327EFB77F00BE2701 /* Julius Caesar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Julius Caesar.jpg"; sourceTree = "<group>"; };
 		B49AB2D527EFB77F00BE2701 /* War and Peace.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "War and Peace.jpg"; sourceTree = "<group>"; };
 		B49AB2D627EFB77F00BE2701 /* The Possessed.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "The Possessed.jpg"; sourceTree = "<group>"; };
@@ -97,7 +94,6 @@
 		B49AB30927F0B51300BE2701 /* Anna Karenina.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Anna Karenina.jpg"; sourceTree = "<group>"; };
 		B4BFEEAC27E7C3980056F379 /* ReadingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListViewModel.swift; sourceTree = "<group>"; };
 		B4BFEEAE27E7C41F0056F379 /* ReadingListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListApp.swift; sourceTree = "<group>"; };
-		B4BFEEB027E8BC6F0056F379 /* ReadingList2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ReadingList2.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,8 +180,6 @@
 				B47AC35623AA7999000D3728 /* ReadingList.swift */,
 				B47AC35823AA7BAF000D3728 /* DataStore.swift */,
 				B42D8F8F23B15F600062F018 /* ReadingList.json */,
-				B4BFEEB027E8BC6F0056F379 /* ReadingList2.json */,
-				B49AB2C527EF9A4D00BE2701 /* AvailableBooks.json */,
 			);
 			path = ReadingListModel;
 			sourceTree = "<group>";
@@ -306,9 +300,7 @@
 				B47AC33923A80C0D000D3728 /* Preview Assets.xcassets in Resources */,
 				B49AB2F127EFB77F00BE2701 /* War and Peace.jpg in Resources */,
 				B49AB2FF27EFB77F00BE2701 /* Pride and Prejudice.jpg in Resources */,
-				B49AB2C627EF9A4D00BE2701 /* AvailableBooks.json in Resources */,
 				B49AB2FC27EFB77F00BE2701 /* The Iliad.jpg in Resources */,
-				B4BFEEB127E8BC6F0056F379 /* ReadingList2.json in Resources */,
 				B49AB30227EFB77F00BE2701 /* Emma.jpg in Resources */,
 				B49AB2F227EFB77F00BE2701 /* The Possessed.jpg in Resources */,
 				B49AB30B27F0B51300BE2701 /* Anna Karenina.jpg in Resources */,
