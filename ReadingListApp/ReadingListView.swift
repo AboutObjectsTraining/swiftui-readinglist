@@ -85,15 +85,18 @@ extension ReadingListView {
 
 struct EditTitleView: View {
     @EnvironmentObject var viewModel: ReadingListViewModel
+    @FocusState var isFocused: Bool
     
     var body: some View {
         NavigationView {
             Form {
                 TextField("Title", text: $viewModel.readingList.title)
                     .textFieldStyle(.roundedBorder)
+                    .focused($isFocused)
                     .padding(.vertical, 12)
+                    .clearButton(text: $viewModel.readingList.title, isFocused: isFocused)
             }
-            .navigationTitle("ReadingList Title")
+            .navigationTitle("Reading List Title")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: done, label: { Text("Done") })

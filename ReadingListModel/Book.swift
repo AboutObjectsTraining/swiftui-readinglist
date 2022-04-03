@@ -14,8 +14,10 @@ struct Book: Codable, Identifiable
     }
     
     var id = UUID()
-    var title: String
-    var year: String
+    var title: String {
+        didSet { title = title.trimmingCharacters(in: .whitespaces) }
+    }
+    var year: String 
     var author: Author
     
     var percentComplete = 0.0

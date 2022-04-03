@@ -34,7 +34,7 @@ struct EditBookView: View {
         .navigationTitle("Book Details")
         .navigationBarBackButtonHidden(viewModel.isEditing)
         .toolbar {
-            ToolbarItem {
+            ToolbarItem(placement: .navigationBarTrailing) {
                 Button(
                     action: edit,
                     label: {
@@ -52,7 +52,7 @@ struct EditBookView: View {
     }
     
     private func edit() {
-        withAnimation(.easeInOut(duration: 0.3)) {
+        withAnimation(.easeInOut(duration: 0.2)) {
             viewModel.isEditing.toggle()
         }
         
@@ -127,6 +127,7 @@ struct TextFieldCell: View {
     let title: String
     let isEditing: Bool
     @Binding var value: String
+    @FocusState var isFocused: Bool
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -136,6 +137,8 @@ struct TextFieldCell: View {
                 .padding(.bottom, -4)
             TextField(title, text: $value)
                 .conditionalTextFieldStyle(editing: isEditing)
+                .focused($isFocused)
+                .clearButton(text: $value, isFocused: isFocused)
         }
         .listRowBackground(Color.brown.opacity(0.1))
     }

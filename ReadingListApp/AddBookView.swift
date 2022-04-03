@@ -27,6 +27,7 @@ struct AddBookView: View {
                 }
                 .listRowSeparator(.hidden)
                 .buttonStyle(.plain)
+                .navigationTitle("Add Book")
             }
             .interactiveDismissDisabled()
             .foregroundColor(.secondary)

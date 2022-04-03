@@ -73,33 +73,41 @@ struct CustomCircularProgressViewStyle: ProgressViewStyle {
     
     func makeBody(configuration: Configuration) -> some View {
         ZStack {
-            if let fractionCompleted = configuration.fractionCompleted {
-                let color = fractionCompleted < 0.7 ? Color.orange : Color.green
-                let strokeStyle = StrokeStyle(lineWidth: 7)
+            let percentComplete = configuration.percentComplete
+            let strokeStyle = StrokeStyle(lineWidth: 7)
+            let color = configuration.color
+            
+            if (percentComplete < 1) {
+                Circle()
+                    .trim(from: 0.0, to: CGFloat(percentComplete))
+                    .stroke(style: strokeStyle)
+                    .rotationEffect(.degrees(-90))
+                    .frame(width: 40)
+                    .background(
+                        Circle()
+                            .stroke(color.opacity(0.3), style: strokeStyle)
+                    )
                 
-                if (fractionCompleted < 1) {
-                    Circle()
-                        .trim(from: 0.0, to: CGFloat(fractionCompleted))
-                        .stroke(style: strokeStyle)
-                        .rotationEffect(.degrees(-90))
-                        .frame(width: 40)
-                        .background(
-                            Circle()
-                                .stroke(color.opacity(0.2), style: strokeStyle)
-                        )
-                    
-                    Text("\(Int(fractionCompleted * 100))%")
-                        .font(.caption2)
-                } else {
-                    Image(systemName: "checkmark.circle.fill")
-                        .imageScale(.large)
-                        .font(.system(size: 32))
-                        .padding(.horizontal, -3)
-                }
+                Text("\(Int(percentComplete * 100))%")
+                    .font(.caption2)
+            } else {
+                Image(systemName: "checkmark.circle.fill")
+                    .imageScale(.large)
+                    .font(.system(size: 32).weight(.medium))
+                    .padding(.horizontal, -6)
             }
         }
-        .foregroundColor(configuration.fractionCompleted ?? 0 < 0.7
-                         ? .orange : .green)
+        .foregroundColor(configuration.color)
     }
 }
 
+extension ProgressViewStyleConfiguration {
+    var percentComplete: Double {
+        fractionCompleted ?? 0
+    }
+    
+    var color: Color {
+        percentComplete < 0.1 ? .secondary :
+        percentComplete < 0.7 ? .orange : .green
+    }
+}
