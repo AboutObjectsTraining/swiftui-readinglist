@@ -5,12 +5,6 @@ import Foundation
 
 struct Author: Codable, Identifiable, CustomStringConvertible
 {
-    enum CodingKeys: String, CodingKey {
-        case id
-        case firstName
-        case lastName
-    }
-    
     var id = UUID()
     var firstName: String
     var lastName: String
@@ -34,23 +28,5 @@ struct Author: Codable, Identifiable, CustomStringConvertible
     init(firstName: String? = nil, lastName: String? = nil) {
         self.firstName = firstName ?? ""
         self.lastName = lastName ?? ""
-    }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = try container.decode(UUID.self, forKey: .id)
-        firstName = try container.decode(String.self, forKey: .firstName)
-        lastName = try container.decode(String.self, forKey: .lastName)
-    }
-}
-
-// MARK: Encoding
-extension Author
-{
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(id, forKey: .id)
-        try container.encode(firstName, forKey: .firstName)
-        try container.encode(lastName, forKey: .lastName)
     }
 }

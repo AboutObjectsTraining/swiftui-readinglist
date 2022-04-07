@@ -29,7 +29,7 @@ final class DataStore
 {
     let storeType = "json"
     let storeName: String
-    var bundle = Bundle.main
+    var bundle: Bundle
     
     var documentsDirectoryUrl: URL {
         FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -41,12 +41,7 @@ final class DataStore
         bundle.url(forResource: storeName, withExtension: storeType)!
     }
     
-    init() {
-        storeName = defaultStoreName
-        copyStoreFileIfNecessary()
-    }
-    
-    init(storeName: String, bundle: Bundle) {
+    init(storeName: String = defaultStoreName, bundle: Bundle = Bundle.main) {
         self.storeName = storeName
         self.bundle = bundle
         copyStoreFileIfNecessary()
@@ -87,9 +82,8 @@ extension DataStore {
 // MARK: - URLSession-based operations
 extension DataStore {
     
-    func fetchWithCombine() throws -> ReadingList {
-        var readingList: ReadingList?
-        
+    func fetchWithCombine(callback: @escaping (ReadingList) -> Void) throws -> Void {
+
         subscriptions.removeAll()
         
         URLSession.shared.dataTaskPublisher(for: storeFileUrl)
@@ -102,16 +96,10 @@ extension DataStore {
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 print(completion)
-            } receiveValue: {
-                readingList = $0
+            } receiveValue: { readingList in
+                callback(readingList)
             }
             .store(in: &subscriptions)
-        
-        guard let readingList = readingList else {
-            throw StoreError.unableToDecode(message: "Unable to decode ReadingList at url \(storeFileUrl)")
-        }
-        
-        return readingList
     }
     
     @MainActor func fetchWithAsyncAwait() async throws -> ReadingList {

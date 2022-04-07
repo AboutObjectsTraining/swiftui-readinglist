@@ -122,39 +122,13 @@ class ModelTests: XCTestCase {
         print(readingList)
     }
     
-    func testFetchReadingListWithCombine() {
-        // FIXME: Not sure why this is currently broken
-    
-        var readingList: ReadingList?
-        
-        subscriptions.removeAll()
-        
+    func testFetchReadingListWithCombine() throws {
+        let expection = XCTestExpectation()
         let store = DataStore(storeName: "TestReadingList", bundle: Bundle(for: type(of: self)))
-        let url = store.storeFileUrl
-        let publisher = URLSession.shared.dataTaskPublisher(for: url)
         
-        publisher
-            .breakpointOnError()
-            .map { data, response in
-                print(response)
-                print(String(data: data, encoding: .utf8)!)
-                return data
-            }
-            .breakpointOnError()
-            .decode(type: ReadingList.self, decoder: decoder)
-            .print()
-            .receive(on: DispatchQueue.main)
-            .sink { completion in
-                print("Received completion \(completion)")
-            } receiveValue: {
-                readingList = $0
-            }
-            .store(in: &subscriptions)
-        
-        guard let readingList = readingList else {
-            fatalError("Unable to decode ReadingList at url \(store.storeFileUrl)")
+        try store.fetchWithCombine { readingList in
+            print(readingList)
+            expection.fulfill()
         }
-        
-        print(String(describing: readingList))
     }
 }
