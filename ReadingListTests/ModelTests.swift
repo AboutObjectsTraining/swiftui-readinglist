@@ -67,7 +67,7 @@ class ModelTests: XCTestCase {
     func testReadingList() {
         let author = Author(firstName: "William", lastName: "Shakespeare")
         let book1 = Book(title: "The Tempest", year: "2012", author: author)
-        let book2 = Book(title: "Julius Ceasar", year: "2019", author: author)
+        let book2 = Book(title: "Julius Caeser", year: "2019", author: author)
         let readingList = ReadingList(title: "My Summer Reading", books: [book1, book2])
         
         guard let data = try? encoder.encode(readingList) else {
@@ -84,7 +84,7 @@ class ModelTests: XCTestCase {
     func testSaveReadingList() {
         let author = Author(firstName: "William", lastName: "Shakespeare")
         let book1 = Book(title: "The Tempest", year: "2012", author: author)
-        let book2 = Book(title: "Julius Ceasar", year: "2019", author: author)
+        let book2 = Book(title: "Julius Caeser", year: "2019", author: author)
         let readingList = ReadingList(title: "My Summer Reading", books: [book1, book2])
         let store = DataStore(storeName: "TestReadingList", bundle: Bundle(for: type(of: self)))
         

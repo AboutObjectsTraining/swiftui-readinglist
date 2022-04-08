@@ -4,6 +4,7 @@
 import SwiftUI
 
 struct EditBookView: View {
+    @EnvironmentObject var readingListViewModel: ReadingListViewModel
     @ObservedObject var viewModel: EditBookViewModel
     
     var body: some View {
@@ -57,8 +58,61 @@ struct EditBookView: View {
         }
         
         if !viewModel.isEditing {
-            viewModel.update()
+            readingListViewModel.update(book: viewModel.book)
         }
+    }
+}
+
+struct TextFieldCell: View {
+    let title: String
+    let isEditing: Bool
+    @Binding var value: String
+    @FocusState var isFocused: Bool
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(title)
+                .foregroundColor(.brown.opacity(0.5))
+                .font(.caption)
+                .padding(.bottom, -4)
+            TextField(title, text: $value)
+                .conditionalTextFieldStyle(editing: isEditing)
+                .focused($isFocused)
+                .clearButton(text: $value, isFocused: isFocused)
+        }
+        .listRowBackground(Color.brown.opacity(0.1))
+    }
+    
+    init(_ title: String, value: Binding<String>, editing: Bool) {
+        self.title = title
+        self.isEditing = editing
+        _value = value
+    }
+}
+
+extension TextField {
+    func conditionalTextFieldStyle(editing: Bool) -> some View {
+        modifier(ConditionalTextFieldStyle(isEditing: editing))
+    }
+}
+
+struct ConditionalTextFieldStyle: ViewModifier {
+    let isEditing: Bool
+    
+    func body(content: Content) -> some View {
+        Group {
+            if isEditing {
+                content
+                    .textFieldStyle(.roundedBorder)
+                    .disabled(false)
+            } else {
+                content
+                    .textFieldStyle(.plain)
+                    .disabled(true)
+            }
+        }
+        .padding(.bottom, 6)
+        .multilineTextAlignment(.leading)
     }
 }
 
@@ -123,63 +177,10 @@ struct ImageCell: View {
     }
 }
 
-struct TextFieldCell: View {
-    let title: String
-    let isEditing: Bool
-    @Binding var value: String
-    @FocusState var isFocused: Bool
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(title)
-                .foregroundColor(.brown.opacity(0.5))
-                .font(.caption)
-                .padding(.bottom, -4)
-            TextField(title, text: $value)
-                .conditionalTextFieldStyle(editing: isEditing)
-                .focused($isFocused)
-                .clearButton(text: $value, isFocused: isFocused)
-        }
-        .listRowBackground(Color.brown.opacity(0.1))
-    }
-    
-    init(_ title: String, value: Binding<String>, editing: Bool) {
-        self.title = title
-        self.isEditing = editing
-        _value = value
-    }
-}
-
-extension View {
-    func conditionalTextFieldStyle(editing: Bool) -> some View {
-        modifier(ConditionalTextFieldStyle(isEditing: editing))
-    }
-}
-
-struct ConditionalTextFieldStyle: ViewModifier {
-    let isEditing: Bool
-    
-    func body(content: Content) -> some View {
-        Group {
-            if isEditing {
-                content
-                    .textFieldStyle(.roundedBorder)
-                    .disabled(false)
-            } else {
-                content
-                    .textFieldStyle(.plain)
-                    .disabled(true)
-            }
-        }
-        .padding(.bottom, 6)
-        .multilineTextAlignment(.leading)
-    }
-}
-
 struct EditBookView_Preview: PreviewProvider {
     static let author = Author(firstName: "George", lastName: "Orwell")
     static let book = Book(title: "1984", year: "2012", author: author)
-    static let viewModel = EditBookViewModel(book: book, updateBook: { _ in })
+    static let viewModel = EditBookViewModel(book: book)
     
     static var previews: some View {
         NavigationView {

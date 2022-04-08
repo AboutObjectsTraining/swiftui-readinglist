@@ -23,7 +23,7 @@ extension ReadingListViewModel {
     
     private func makeCellViewModels() {
         cellViewModels = readingList.books.map {
-            BookCellViewModel(book: $0, updateBook: update(book:))
+            BookCellViewModel(book: $0)
         }
     }
 
@@ -50,7 +50,7 @@ extension ReadingListViewModel {
     }
     
     func addBook(_ book: Book) {
-        let newCellVM = BookCellViewModel(book: book, updateBook: update(book:))
+        let newCellVM = BookCellViewModel(book: book)
         cellViewModels.append(newCellVM)
         save()
     }
