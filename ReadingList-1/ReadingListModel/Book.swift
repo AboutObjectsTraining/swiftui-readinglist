@@ -26,5 +26,5 @@ public struct Book: Codable, Identifiable {
 }
 
 extension Book: CustomStringConvertible {
-    public var description: String { "title: \(title), author: \(author), UUID: \(id)" }
+    public var description: String { "\n\t\ttitle: \(title), author: \(author), UUID: \(id)" }
 }

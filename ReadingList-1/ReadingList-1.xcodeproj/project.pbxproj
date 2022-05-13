@@ -15,6 +15,9 @@
 		B4121ED62820730B0028F176 /* ReadingListModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4121EC02820730B0028F176 /* ReadingListModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4121EDF282073460028F176 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4121EDE282073460028F176 /* Book.swift */; };
 		B4121EE1282074E70028F176 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4121EE0282074E70028F176 /* Author.swift */; };
+		B4121EE3282AD5D30028F176 /* ReadingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4121EE2282AD5D30028F176 /* ReadingList.swift */; };
+		B4121EE5282AEC6F0028F176 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4121EE4282AEC6F0028F176 /* DataStore.swift */; };
+		B4BCB71D282E7E6B0046EB44 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BCB71C282E7E6B0046EB44 /* APIClient.swift */; };
 		B4E5C04C2820612600F51C65 /* ReadingListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E5C04B2820612600F51C65 /* ReadingListApp.swift */; };
 		B4E5C04E2820612600F51C65 /* ReadingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E5C04D2820612600F51C65 /* ReadingListView.swift */; };
 		B4E5C0502820612700F51C65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E5C04F2820612700F51C65 /* Assets.xcassets */; };
@@ -67,6 +70,9 @@
 		B4121ED02820730B0028F176 /* ReadingListModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListModelTests.swift; sourceTree = "<group>"; };
 		B4121EDE282073460028F176 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		B4121EE0282074E70028F176 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		B4121EE2282AD5D30028F176 /* ReadingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingList.swift; sourceTree = "<group>"; };
+		B4121EE4282AEC6F0028F176 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		B4BCB71C282E7E6B0046EB44 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		B4E5C0482820612600F51C65 /* ReadingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E5C04B2820612600F51C65 /* ReadingListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListApp.swift; sourceTree = "<group>"; };
 		B4E5C04D2820612600F51C65 /* ReadingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListView.swift; sourceTree = "<group>"; };
@@ -108,6 +114,9 @@
 				B4121EC32820730B0028F176 /* ReadingListModel.docc */,
 				B4121EDE282073460028F176 /* Book.swift */,
 				B4121EE0282074E70028F176 /* Author.swift */,
+				B4121EE2282AD5D30028F176 /* ReadingList.swift */,
+				B4121EE4282AEC6F0028F176 /* DataStore.swift */,
+				B4BCB71C282E7E6B0046EB44 /* APIClient.swift */,
 			);
 			path = ReadingListModel;
 			sourceTree = "<group>";
@@ -304,7 +313,10 @@
 			files = (
 				B4121EE1282074E70028F176 /* Author.swift in Sources */,
 				B4121EDF282073460028F176 /* Book.swift in Sources */,
+				B4121EE3282AD5D30028F176 /* ReadingList.swift in Sources */,
+				B4121EE5282AEC6F0028F176 /* DataStore.swift in Sources */,
 				B4121EC42820730B0028F176 /* ReadingListModel.docc in Sources */,
+				B4BCB71D282E7E6B0046EB44 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
