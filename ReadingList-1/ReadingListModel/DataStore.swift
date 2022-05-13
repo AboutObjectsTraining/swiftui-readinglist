@@ -1,12 +1,6 @@
 // Copyright (C) 2022 About Objects, Inc. All Rights Reserved.
 // See LICENSE.txt for this project's licensing information.
 
-enum StorageError: Error {
-    case unableToEncode(message: String)
-    case unableToDecode(message: String)
-    case unableToSave(message: String)
-}
-
 public final class DataStore {
     public static let defaultFileName = "ReadingList"
     public static let fileExtension = "json"
@@ -49,21 +43,11 @@ extension DataStore {
     
     @MainActor public func fetch() async throws -> ReadingList {
         let data = try await client.fetch(from: fileURL)
-        
-        do {
-            return try decoder.decode(ReadingList.self, from: data)
-        }
-        catch {
-            print("Unable to decode reading list; error was \(error).")
-            throw(error)
-        }
+        return try decoder.decode(ReadingList.self, from: data)
     }
     
     public func save(readingList: ReadingList) async throws {
-        guard let data = try? encoder.encode(readingList) else {
-            throw StorageError.unableToEncode(message: "Unable to encode \(readingList)")
-        }
-        
+        let data = try encoder.encode(readingList)
         try await client.save(data: data, to: fileURL)
     }
 }

@@ -16,7 +16,8 @@ struct ReadingListView: View {
     }
     var listView: some View {
         List(viewModel.readingList.books) { book in
-            Text("\(book.title)")
+//            Text("\(book.title)")
+            BookCell(book: book)
         }
     }
     
@@ -32,17 +33,19 @@ struct ReadingListView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.tertiary)
             .navigationTitle("My Reading List")
-            .onAppear {
-                Task {
-                    do {
-                        try await viewModel.loadReadingListIfEmpty()
-                    } catch {
-                        showAlert()
-                    }
-                }
-            }
+            .onAppear(perform: loadReadingList)
             .alert("Unable to load reading list.", isPresented: $loadFailed) {
                 Button("Okay", role: .cancel) { }
+            }
+        }
+    }
+    
+    func loadReadingList() {
+        Task {
+            do {
+                try await viewModel.loadReadingListIfEmpty()
+            } catch {
+                showAlert()
             }
         }
     }
@@ -52,6 +55,7 @@ struct ReadingListView: View {
     }
 }
 
+#if DEBUG
 struct ReadingListView_Previews: PreviewProvider {
     static let viewModel = ReadingListViewModel()
     static var previews: some View {
@@ -63,3 +67,4 @@ struct ReadingListView_Previews: PreviewProvider {
         .environmentObject(viewModel)
     }
 }
+#endif

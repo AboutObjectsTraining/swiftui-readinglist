@@ -8,6 +8,9 @@ public protocol ClientProtocol {
     func save(data: Data, to url: URL) async throws
 }
 
+enum StorageError: Error {
+    case unableToSave(message: String)
+}
 
 public struct APIClient: ClientProtocol {
     

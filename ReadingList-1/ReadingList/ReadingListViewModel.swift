@@ -32,3 +32,17 @@ extension ReadingListViewModel {
         self.readingList = try await self.dataStore.fetch()
     }
 }
+
+extension Book {
+    var formattedYear: String {
+        year.description
+    }
+    
+    var artworkUrl: URL {
+        let title = title.trimmingCharacters(in: .whitespaces)
+        let name = title.isEmpty ? "unknown" : title
+        let url = Bundle.main.path(forResource: name, ofType: "jpg") ?? ""
+        return URL(fileURLWithPath: url)
+    }
+}
+
