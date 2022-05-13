@@ -6,7 +6,7 @@ public struct ReadingList: Codable, Identifiable {
     public var title: String
     public private(set) var books: [Book]
     
-    public init(id: UUID = UUID(), title: String, books: [Book] = []) {
+    public init(id: UUID = UUID(), title: String = "Empty", books: [Book] = []) {
         self.id = id
         self.title = title
         self.books = books

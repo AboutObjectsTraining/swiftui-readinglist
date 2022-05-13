@@ -64,4 +64,25 @@ class ReadingListModelTests: XCTestCase {
         XCTAssert(FileManager.default.fileExists(atPath: store.fileURL.path))
         print(store.fileURL.path)
     }
+    
+    func testDecodeBook() throws {
+        let data = bookJSON.data(using: .utf8)!
+        let book = try JSONDecoder().decode(Book.self, from: data)
+        print(book)
+        XCTAssertEqual(book.year, 2012)
+    }
 }
+
+let bookJSON = """
+{
+  "status" : "Not Started",
+  "id" : "02CEF533-3878-4B18-8ECC-97866C9F263E",
+  "title" : "Julius Caesar",
+  "author" : {
+    "id" : "6338E8F7-10E8-4B68-AF66-200E6430638F",
+    "firstName" : "William",
+    "lastName" : "Shakespeare"
+  },
+  "year" : 2012,
+}
+"""

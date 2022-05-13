@@ -35,7 +35,11 @@ public final class DataStore {
     
     private func copyDefaultFileIfNecessary() {
         if !FileManager.default.fileExists(atPath: fileURL.path) {
-            try! FileManager.default.copyItem(at: templateFileURL, to: fileURL)
+            do {
+                try FileManager.default.copyItem(at: templateFileURL, to: fileURL)
+            } catch {
+                fatalError("Unable to copy JSON from app bundle to documents directory.")
+            }
         }
     }
 }
@@ -45,7 +49,14 @@ extension DataStore {
     
     @MainActor public func fetch() async throws -> ReadingList {
         let data = try await client.fetch(from: fileURL)
-        return try decoder.decode(ReadingList.self, from: data)
+        
+        do {
+            return try decoder.decode(ReadingList.self, from: data)
+        }
+        catch {
+            print("Unable to decode reading list; error was \(error).")
+            throw(error)
+        }
     }
     
     public func save(readingList: ReadingList) async throws {
