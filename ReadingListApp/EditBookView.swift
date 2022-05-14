@@ -7,6 +7,9 @@ struct EditBookView: View {
     @EnvironmentObject var readingListViewModel: ReadingListViewModel
     @ObservedObject var viewModel: EditBookViewModel
     
+    @State var isShowingImagePicker = false
+    @State var newCoverImage: UIImage?
+    
     var body: some View {
         Form {
             Section("Book") {
@@ -28,9 +31,25 @@ struct EditBookView: View {
                               editing: viewModel.isEditing)
             }
             Section {
-                ImageCell(url: viewModel.book.artworkUrl)
+                Group {
+                    if let newCoverImage = newCoverImage {
+                        ImageCell(url: viewModel.book.artworkUrl,
+                                  isEditing: viewModel.isEditing,
+                                  image: Image(uiImage: newCoverImage))
+                    } else {
+                        ImageCell(url: viewModel.book.artworkUrl,
+                                  isEditing: viewModel.isEditing)
+                    }
+                }
+                .onTapGesture(perform: showImagePicker)
             }
             .listRowBackground(Color.clear)
+            .sheet(isPresented: $isShowingImagePicker) {
+                ImagePicker(image: $newCoverImage)
+            }
+            .onChange(of: newCoverImage) { newValue in
+                
+            }
         }
         .navigationTitle("Book Details")
         .navigationBarBackButtonHidden(viewModel.isEditing)
@@ -49,6 +68,10 @@ struct EditBookView: View {
     init(viewModel: EditBookViewModel) {
         self.viewModel = viewModel
     }
+}
+
+// MARK: - Intents
+extension EditBookView {
     
     private func edit() {
         withAnimation(.easeInOut(duration: 0.2)) {
@@ -59,8 +82,15 @@ struct EditBookView: View {
             readingListViewModel.update(book: viewModel.book)
         }
     }
+    
+    private func showImagePicker() {
+        if viewModel.isEditing {
+            isShowingImagePicker = true
+        }
+    }
 }
 
+// TODO: Migrate to separate file
 struct SliderCell: View {
     @Binding var percentComplete: Double
     let editing: Bool
@@ -84,41 +114,6 @@ struct SliderCell: View {
             }
         }
         .listRowBackground(Color.brown.opacity(0.1))
-    }
-}
-
-struct ImageCell: View {
-    let url: URL
-    
-    var body: some View {
-        HStack {
-            Spacer()
-            
-            AsyncImage(url: url) { phase in
-                if let image = phase.image {
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                } else if phase.error == nil {
-                    ProgressView()
-                } else {
-                    ZStack(alignment: .center) {
-                        Color.red
-                            .frame(width: 120)
-                        Image(systemName: "photo.circle")
-                            .imageScale(.large)
-                            .font(.system(size: 44))
-                            .foregroundColor(.white)
-                    }
-                }
-            }
-            .frame(height: 180)
-            .shadow(color: .black.opacity(0.5), radius: 12, x: 0, y: 3)
-            .padding(.vertical, 18)
-            .layoutPriority(1)
-            
-            Spacer()
-        }
     }
 }
 
