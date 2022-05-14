@@ -97,6 +97,11 @@ struct EditTitleView: View {
                     .clearButton(text: $viewModel.readingList.title, isFocused: isFocused)
             }
             .navigationTitle("Reading List Title")
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+                    isFocused = true
+                }
+            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: done, label: { Text("Done") })
@@ -115,9 +120,6 @@ struct EditTitleView: View {
 struct ReadingListPreview: PreviewProvider {
     static var previews: some View {
         Group {
-//            ReadingListView()
-//                .environment(\.colorScheme, .dark)
-//                .environmentObject(ReadingListViewModel.empty)
             ReadingListView()
                 .environment(\.colorScheme, .dark)
                 .environmentObject(ReadingListViewModel.empty)
