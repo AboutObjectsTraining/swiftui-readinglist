@@ -83,38 +83,6 @@ extension ReadingListView {
     }
 }
 
-struct EditTitleView: View {
-    @EnvironmentObject var viewModel: ReadingListViewModel
-    @FocusState var isFocused: Bool
-    
-    var body: some View {
-        NavigationView {
-            Form {
-                TextField("Title", text: $viewModel.readingList.title)
-                    .textFieldStyle(.roundedBorder)
-                    .focused($isFocused)
-                    .padding(.vertical, 12)
-                    .clearButton(text: $viewModel.readingList.title, isFocused: isFocused)
-            }
-            .navigationTitle("Reading List Title")
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
-                    isFocused = true
-                }
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: done, label: { Text("Done") })
-                }
-            }
-        }
-    }
-    
-    private func done() {
-        viewModel.save()
-        viewModel.isEditingTitle = false
-    }
-}
 
 #if DEBUG
 struct ReadingListPreview: PreviewProvider {
@@ -122,16 +90,10 @@ struct ReadingListPreview: PreviewProvider {
         Group {
             ReadingListView()
                 .environment(\.colorScheme, .dark)
-                .environmentObject(ReadingListViewModel.empty)
             ReadingListView()
                 .environment(\.colorScheme, .light)
-                .environmentObject(ReadingListViewModel.empty)
-//                .previewInterfaceOrientation(.landscapeRight)
-
-            EditTitleView()
-                .environment(\.colorScheme, .dark)
-                .environmentObject(ReadingListViewModel.loaded)
         }
+        .environmentObject(ReadingListViewModel.loaded)
     }
 }
 #endif

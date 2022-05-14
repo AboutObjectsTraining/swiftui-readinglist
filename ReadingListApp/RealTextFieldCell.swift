@@ -29,8 +29,13 @@ struct RealTextFieldCell: UIViewRepresentable {
         }
     }
     
-    @Binding var text: String
     let placeholder: String
+    @Binding var text: String
+    
+    init(_ placeholder: String, text: Binding<String>) {
+        self.placeholder = placeholder
+        _text = text
+    }
     
     private let textField = UITextField()
     
@@ -88,10 +93,10 @@ struct RealTextFieldCellDemoView: View {
                 Text(firstName)
                 Text(lastName)
             }
-            RealTextFieldCell(text: $firstName, placeholder: "First name")
+            RealTextFieldCell("First name", text: $firstName)
                 .clearButton(mode: .whileEditing)
                 .autofocused()
-            RealTextFieldCell(text: $lastName, placeholder: "Last name")
+            RealTextFieldCell("Last name", text: $lastName)
                 .clearButton(mode: .whileEditing)
         }
         .padding()

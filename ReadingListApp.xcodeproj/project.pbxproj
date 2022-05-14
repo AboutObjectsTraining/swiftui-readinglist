@@ -40,6 +40,7 @@
 		B49AB30227EFB77F00BE2701 /* Emma.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB2E627EFB77F00BE2701 /* Emma.jpg */; };
 		B49AB30A27F0B51300BE2701 /* The Brothers Karamozov.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB30827F0B51300BE2701 /* The Brothers Karamozov.jpg */; };
 		B49AB30B27F0B51300BE2701 /* Anna Karenina.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB30927F0B51300BE2701 /* Anna Karenina.jpg */; };
+		B4B12E5C28303A8100C0C0C9 /* EditTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B12E5B28303A8100C0C0C9 /* EditTitleView.swift */; };
 		B4BCB748283003710046EB44 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BCB747283003710046EB44 /* TextFieldCell.swift */; };
 		B4BCB74A283012E30046EB44 /* RealTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BCB749283012E30046EB44 /* RealTextFieldCell.swift */; };
 		B4BFEEAD27E7C3980056F379 /* ReadingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BFEEAC27E7C3980056F379 /* ReadingListViewModel.swift */; };
@@ -94,6 +95,7 @@
 		B49AB2E627EFB77F00BE2701 /* Emma.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Emma.jpg; sourceTree = "<group>"; };
 		B49AB30827F0B51300BE2701 /* The Brothers Karamozov.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "The Brothers Karamozov.jpg"; sourceTree = "<group>"; };
 		B49AB30927F0B51300BE2701 /* Anna Karenina.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Anna Karenina.jpg"; sourceTree = "<group>"; };
+		B4B12E5B28303A8100C0C0C9 /* EditTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTitleView.swift; sourceTree = "<group>"; };
 		B4BCB747283003710046EB44 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		B4BCB749283012E30046EB44 /* RealTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTextFieldCell.swift; sourceTree = "<group>"; };
 		B4BFEEAC27E7C3980056F379 /* ReadingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListViewModel.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				B4BFEEAE27E7C41F0056F379 /* ReadingListApp.swift */,
 				B42D8F8D23B159C00062F018 /* ReadingListView.swift */,
+				B4B12E5B28303A8100C0C0C9 /* EditTitleView.swift */,
 				B4BFEEAC27E7C3980056F379 /* ReadingListViewModel.swift */,
 				B49AB2BF27EE6E1100BE2701 /* BookCell.swift */,
 				B49AB2C127EE6E1E00BE2701 /* BookCellViewModel.swift */,
@@ -333,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B49AB2BC27EE582500BE2701 /* EditBookView.swift in Sources */,
+				B4B12E5C28303A8100C0C0C9 /* EditTitleView.swift in Sources */,
 				B46F3FE423BBD14800A0A108 /* AddBookView.swift in Sources */,
 				B49AB2C027EE6E1100BE2701 /* BookCell.swift in Sources */,
 				B42D8F8E23B159C00062F018 /* ReadingListView.swift in Sources */,
