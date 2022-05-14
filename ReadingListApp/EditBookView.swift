@@ -35,16 +35,14 @@ struct EditBookView: View {
         .navigationTitle("Book Details")
         .navigationBarBackButtonHidden(viewModel.isEditing)
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(
-                    action: edit,
-                    label: {
-                        Text(viewModel.isEditing ? "Done" : "Edit" )
-                            .fontWeight(viewModel.isEditing ? .semibold : .regular)
-                    }
-                )
-                .padding(.horizontal, 8)
-            }
+            Button(
+                action: edit,
+                label: {
+                    Text(viewModel.isEditing ? "Done" : "Edit" )
+                        .fontWeight(viewModel.isEditing ? .semibold : .regular)
+                }
+            )
+            .padding(.horizontal, 8)
         }
     }
     
@@ -62,8 +60,6 @@ struct EditBookView: View {
         }
     }
 }
-
-
 
 struct SliderCell: View {
     @Binding var percentComplete: Double
@@ -97,23 +93,22 @@ struct ImageCell: View {
     var body: some View {
         HStack {
             Spacer()
-            Group {
-                AsyncImage(url: url) { phase in
-                    if let image = phase.image {
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                    } else if phase.error == nil {
-                        ProgressView()
-                    } else {
-                        ZStack(alignment: .center) {
-                            Color.red
-                                .frame(width: 120)
-                            Image(systemName: "photo.circle")
-                                .imageScale(.large)
-                                .font(.system(size: 44))
-                                .foregroundColor(.white)
-                        }
+            
+            AsyncImage(url: url) { phase in
+                if let image = phase.image {
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                } else if phase.error == nil {
+                    ProgressView()
+                } else {
+                    ZStack(alignment: .center) {
+                        Color.red
+                            .frame(width: 120)
+                        Image(systemName: "photo.circle")
+                            .imageScale(.large)
+                            .font(.system(size: 44))
+                            .foregroundColor(.white)
                     }
                 }
             }
@@ -121,6 +116,7 @@ struct ImageCell: View {
             .shadow(color: .black.opacity(0.5), radius: 12, x: 0, y: 3)
             .padding(.vertical, 18)
             .layoutPriority(1)
+            
             Spacer()
         }
     }
