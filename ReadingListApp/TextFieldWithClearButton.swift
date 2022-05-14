@@ -40,9 +40,19 @@ struct ClearButton: ViewModifier {
                         }
                     )
                     .padding(.trailing, 8)
+                    .padding(.bottom, 6)
                 }
             }
         }
     }
 }
 
+#if DEBUG
+struct TextFieldWithClearButton_PreviewProvider_Previews: PreviewProvider {
+    static var previews: some View {
+        Form {
+            TextFieldWithClearButton(placeholder: "First Name", text: .constant("Frederick"))
+        }
+    }
+}
+#endif

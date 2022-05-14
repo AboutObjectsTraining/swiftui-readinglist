@@ -9,7 +9,7 @@ struct BookCell: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 12) {
-            InlineImageCell(url: viewModel.book.artworkUrl)
+            ThumbnailImage(url: viewModel.book.artworkUrl)
                 .layoutPriority(1)
             
             VStack(alignment: .leading, spacing: 4) {
@@ -40,29 +40,27 @@ struct BookCell: View {
     }
 }
 
-struct InlineImageCell: View {
+struct ThumbnailImage: View {
     let url: URL
     
     var body: some View {
-        HStack {
-            AsyncImage(url: url) { phase in
-                if let image = phase.image {
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 72)
-                        .layoutPriority(1)
-                } else if phase.error == nil {
-                    ProgressView()
-                } else {
-                    ZStack(alignment: .center) {
-                        Color.red
-                            .frame(width: 45, height: 72)
-                        Image(systemName: "photo.circle")
-                            .imageScale(.large)
-                            .font(.system(size: 25))
-                            .foregroundColor(.white)
-                    }
+        AsyncImage(url: url) { phase in
+            if let image = phase.image {
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 72)
+                    .layoutPriority(1)
+            } else if phase.error == nil {
+                ProgressView()
+            } else {
+                ZStack(alignment: .center) {
+                    Color.red
+                        .frame(width: 45, height: 72)
+                    Image(systemName: "photo.circle")
+                        .imageScale(.large)
+                        .font(.system(size: 25))
+                        .foregroundColor(.white)
                 }
             }
         }
