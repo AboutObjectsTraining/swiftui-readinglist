@@ -41,6 +41,7 @@
 		B49AB30A27F0B51300BE2701 /* The Brothers Karamozov.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB30827F0B51300BE2701 /* The Brothers Karamozov.jpg */; };
 		B49AB30B27F0B51300BE2701 /* Anna Karenina.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B49AB30927F0B51300BE2701 /* Anna Karenina.jpg */; };
 		B4BCB748283003710046EB44 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BCB747283003710046EB44 /* TextFieldCell.swift */; };
+		B4BCB74A283012E30046EB44 /* RealTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BCB749283012E30046EB44 /* RealTextFieldCell.swift */; };
 		B4BFEEAD27E7C3980056F379 /* ReadingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BFEEAC27E7C3980056F379 /* ReadingListViewModel.swift */; };
 		B4BFEEAF27E7C41F0056F379 /* ReadingListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BFEEAE27E7C41F0056F379 /* ReadingListApp.swift */; };
 /* End PBXBuildFile section */
@@ -94,6 +95,7 @@
 		B49AB30827F0B51300BE2701 /* The Brothers Karamozov.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "The Brothers Karamozov.jpg"; sourceTree = "<group>"; };
 		B49AB30927F0B51300BE2701 /* Anna Karenina.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Anna Karenina.jpg"; sourceTree = "<group>"; };
 		B4BCB747283003710046EB44 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
+		B4BCB749283012E30046EB44 /* RealTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTextFieldCell.swift; sourceTree = "<group>"; };
 		B4BFEEAC27E7C3980056F379 /* ReadingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListViewModel.swift; sourceTree = "<group>"; };
 		B4BFEEAE27E7C41F0056F379 /* ReadingListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +149,7 @@
 				B49AB2BB27EE582500BE2701 /* EditBookView.swift */,
 				B49AB2BD27EE583500BE2701 /* EditBookViewModel.swift */,
 				B4BCB747283003710046EB44 /* TextFieldCell.swift */,
+				B4BCB749283012E30046EB44 /* RealTextFieldCell.swift */,
 				B46F3FE323BBD14800A0A108 /* AddBookView.swift */,
 				B49AB2C327EF7FE600BE2701 /* TextFieldWithClearButton.swift */,
 				B47AC33523A80C0D000D3728 /* Assets.xcassets */,
@@ -334,6 +337,7 @@
 				B49AB2C027EE6E1100BE2701 /* BookCell.swift in Sources */,
 				B42D8F8E23B159C00062F018 /* ReadingListView.swift in Sources */,
 				B4BFEEAF27E7C41F0056F379 /* ReadingListApp.swift in Sources */,
+				B4BCB74A283012E30046EB44 /* RealTextFieldCell.swift in Sources */,
 				B4BCB748283003710046EB44 /* TextFieldCell.swift in Sources */,
 				B49AB2C227EE6E1E00BE2701 /* BookCellViewModel.swift in Sources */,
 				B49AB2C427EF7FE600BE2701 /* TextFieldWithClearButton.swift in Sources */,
