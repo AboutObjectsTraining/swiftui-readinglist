@@ -3,7 +3,7 @@
 
 import SwiftUI
 
-private let useRealTextField = true
+private let useRealTextField = false
 
 struct EditTitleView: View {
     @EnvironmentObject var viewModel: ReadingListViewModel
@@ -12,16 +12,17 @@ struct EditTitleView: View {
     var body: some View {
         NavigationView {
             Form {
-                if useRealTextField {
-                    RealTextFieldCell("Title", text: $viewModel.readingList.title)
-                        .clearButton(mode: .whileEditing)
-                        .autofocused()
-                } else {
-                    TextField("Title", text: $viewModel.readingList.title)
-                        .textFieldStyle(.roundedBorder)
-                        .focused($isFocused)
-                        .padding(.vertical, 12)
-                        .clearButton(text: $viewModel.readingList.title, isFocused: isFocused)
+                Section(header: Text("Reading List")) {
+                    if useRealTextField {
+                        RealTextFieldCell("Title", text: $viewModel.readingList.title)
+                            .clearButton(mode: .whileEditing)
+                            .autofocused()
+                    } else {
+                        TextField("Title", text: $viewModel.readingList.title)
+                            .textFieldStyle(.automatic)
+                            .focused($isFocused)
+                            .clearButton(text: $viewModel.readingList.title, isFocused: isFocused)
+                    }
                 }
             }
             .navigationTitle("Edit Title")
@@ -54,6 +55,7 @@ struct EditTitleView_Previews: PreviewProvider {
                 .environment(\.colorScheme, .light)
             EditTitleView()
                 .environment(\.colorScheme, .dark)
+            ReadingListView()
         }
         .environmentObject(ReadingListViewModel.loaded)
     }

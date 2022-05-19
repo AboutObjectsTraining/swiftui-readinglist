@@ -12,6 +12,8 @@ final class ReadingListViewModel: ObservableObject {
     @Published var readingList = ReadingList()
     @Published var isEmpty = true
     
+    @Published var loadFailed = false
+    
     init(dataStore: DataStore = DataStore()) {
         self.dataStore = dataStore
         configurePublishers()
@@ -28,8 +30,16 @@ final class ReadingListViewModel: ObservableObject {
 
 extension ReadingListViewModel {
     
-    func loadReadingListIfEmpty() async throws {
-        self.readingList = try await self.dataStore.fetch()
+    func loadReadingListIfEmptyOriginal() async throws {
+        readingList = try await self.dataStore.fetch()
+    }
+
+    func loadReadingListIfEmpty() async {
+        do {
+            readingList = try await self.dataStore.fetch()
+        } catch {
+            loadFailed = true
+        }
     }
 }
 

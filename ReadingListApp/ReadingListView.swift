@@ -20,7 +20,7 @@ struct ReadingListView: View
                 moveBooks(fromOffsets: from, toOffset: to)
             }
         }
-        .listStyle(GroupedListStyle())
+        .listStyle(.grouped)
     }
     
     var emptyList: some View {

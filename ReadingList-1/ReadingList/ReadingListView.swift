@@ -6,8 +6,6 @@ import SwiftUI
 struct ReadingListView: View {
     @EnvironmentObject var viewModel: ReadingListViewModel
     
-    @State var loadFailed = false
-
     var emptyView: some View {
         Text("This reading list doesn't contain any books.")
             .font(.system(size: 24, weight: .medium).italic())
@@ -34,7 +32,7 @@ struct ReadingListView: View {
             .background(.tertiary)
             .navigationTitle("My Reading List")
             .onAppear(perform: loadReadingList)
-            .alert("Unable to load reading list.", isPresented: $loadFailed) {
+            .alert("Unable to load reading list.", isPresented: $viewModel.loadFailed) {
                 Button("Okay", role: .cancel) { }
             }
         }
@@ -42,16 +40,8 @@ struct ReadingListView: View {
     
     func loadReadingList() {
         Task {
-            do {
-                try await viewModel.loadReadingListIfEmpty()
-            } catch {
-                showAlert()
-            }
+            await viewModel.loadReadingListIfEmpty()
         }
-    }
-    
-    func showAlert() {
-        loadFailed = true
     }
 }
 

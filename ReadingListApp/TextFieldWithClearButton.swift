@@ -39,8 +39,7 @@ struct ClearButton: ViewModifier {
                                 .foregroundColor(.gray)
                         }
                     )
-                    .padding(.trailing, 8)
-                    .padding(.bottom, 6)
+                    .padding(.trailing, 4)
                 }
             }
         }
@@ -49,9 +48,11 @@ struct ClearButton: ViewModifier {
 
 #if DEBUG
 struct TextFieldWithClearButton_PreviewProvider_Previews: PreviewProvider {
+    @State static var text: String = "Frederick"
+    
     static var previews: some View {
         Form {
-            TextFieldWithClearButton(placeholder: "First Name", text: .constant("Frederick"))
+            TextFieldWithClearButton(placeholder: "First Name", text: $text)
         }
     }
 }
