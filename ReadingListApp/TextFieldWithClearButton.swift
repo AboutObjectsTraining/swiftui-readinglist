@@ -28,31 +28,47 @@ struct ClearButton: ViewModifier {
     let isFocused: Bool
     
     public func body(content: Content) -> some View {
-        content.overlay {
-            HStack {
-                Spacer()
-                if isFocused, !text.isEmpty {
-                    Button(
-                        action: { self.text = "" },
-                        label: {
-                            Image(systemName: "multiply.circle.fill")
-                                .foregroundColor(.gray)
-                        }
-                    )
-                    .padding(.trailing, 4)
-                }
+        return HStack {
+            
+            content
+            
+            if isFocused, !text.isEmpty {
+                Button(
+                    action: { self.text = "" },
+                    label: {
+                        Image(systemName: "multiply.circle.fill")
+                            .foregroundColor(.gray)
+                    }
+                )
+                .padding(.trailing, 4)
             }
         }
     }
 }
 
 #if DEBUG
+struct TextFieldWithClearButton_Test: View {
+    @State var first = "Fred"
+    @State var last = ""
+    @FocusState var isFocused: Bool
+    
+    var body: some View {
+        Form {
+            Text(first + " ") + Text(last)
+            TextFieldWithClearButton(placeholder: "First Name", text: $first)
+                .listRowSeparator(.hidden)
+            TextFieldWithClearButton(placeholder: "Last Name", text: $last)
+                .listRowSeparator(.hidden)
+                .padding(.bottom)
+        }
+    }
+}
+
 struct TextFieldWithClearButton_PreviewProvider_Previews: PreviewProvider {
-    @State static var text: String = "Frederick"
     
     static var previews: some View {
-        Form {
-            TextFieldWithClearButton(placeholder: "First Name", text: $text)
+        Group {
+            TextFieldWithClearButton_Test()
         }
     }
 }

@@ -3,13 +3,13 @@
 
 import SwiftUI
 
-struct RealTextFieldCell: UIViewRepresentable {
+extension RealTextField {
     
     /// A child of the `RealTextFieldCell` instance. Serves as the text field's delegate.
     class Coordinator: NSObject, UITextFieldDelegate {
-        var parent: RealTextFieldCell
+        var parent: RealTextField
         
-        init(parent: RealTextFieldCell) {
+        init(parent: RealTextField) {
             self.parent = parent
         }
         
@@ -28,6 +28,9 @@ struct RealTextFieldCell: UIViewRepresentable {
             return true
         }
     }
+}
+
+struct RealTextField: UIViewRepresentable {
     
     let placeholder: String
     @Binding var text: String
@@ -68,14 +71,14 @@ struct RealTextFieldCell: UIViewRepresentable {
 }
 
 /// Modifiers
-extension RealTextFieldCell {
+extension RealTextField {
     
-    func clearButton(mode: UITextField.ViewMode) -> RealTextFieldCell {
+    func clearButton(mode: UITextField.ViewMode) -> RealTextField {
         textField.clearButtonMode = mode
         return self
     }
     
-    func autofocused() -> RealTextFieldCell {
+    func autofocused() -> RealTextField {
         textField.becomeFirstResponder()
         return self
     }
@@ -83,7 +86,7 @@ extension RealTextFieldCell {
 
 
 #if DEBUG
-struct RealTextFieldCellDemoView: View {
+struct RealTextFieldDemoView: View {
     @State var firstName = ""
     @State var lastName = ""
     
@@ -93,10 +96,10 @@ struct RealTextFieldCellDemoView: View {
                 Text(firstName)
                 Text(lastName)
             }
-            RealTextFieldCell("First name", text: $firstName)
+            RealTextField("First name", text: $firstName)
                 .clearButton(mode: .whileEditing)
                 .autofocused()
-            RealTextFieldCell("Last name", text: $lastName)
+            RealTextField("Last name", text: $lastName)
                 .clearButton(mode: .whileEditing)
         }
         .padding()
@@ -106,7 +109,7 @@ struct RealTextFieldCellDemoView: View {
 struct RealTextFieldCell_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RealTextFieldCellDemoView()
+            RealTextFieldDemoView()
         }
         .previewLayout(
             .fixed(width: 400, height: 200)

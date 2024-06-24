@@ -4,8 +4,8 @@
 import SwiftUI
 import PhotosUI
 
-struct ImagePicker: UIViewControllerRepresentable {
-    
+extension ImagePicker {
+    // Wrapper for the delegate
     class Coordinator: NSObject, PHPickerViewControllerDelegate {
         var parent: ImagePicker
         
@@ -24,6 +24,10 @@ struct ImagePicker: UIViewControllerRepresentable {
             }
         }
     }
+}
+
+// Wrapper for view controller
+struct ImagePicker: UIViewControllerRepresentable {
     
     @Binding var image: UIImage?
     

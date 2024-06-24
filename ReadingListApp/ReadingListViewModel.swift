@@ -42,10 +42,8 @@ extension ReadingListViewModel {
     func loadIfEmpty() {
         guard readingList.books.isEmpty else { return }
         
-        do {
-            readingList = try store.fetch()
-        } catch {
-            print("Unable to fetch ReadingList from store \(store)")
+        Task {
+            readingList = try await store.fetchWithAsyncAwait()
         }
     }
     

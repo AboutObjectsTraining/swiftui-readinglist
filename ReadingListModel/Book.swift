@@ -23,9 +23,10 @@ struct Book: Codable, Identifiable
     var percentComplete = 0.0
     
     var artworkUrl: URL {
-        let title = title.trimmingCharacters(in: .whitespaces)
-        let name = title.isEmpty ? "unknown" : title
-        let url = Bundle.main.path(forResource: name, ofType: "jpg") ?? ""
+        let title = title
+            .trimmingCharacters(in: .whitespaces)
+            .isEmpty ? "unknown" : title
+        let url = Bundle.main.path(forResource: title, ofType: "jpg") ?? ""
         return URL(fileURLWithPath: url)
     }
     

@@ -14,7 +14,7 @@ struct EditTitleView: View {
             Form {
                 Section(header: Text("Reading List")) {
                     if useRealTextField {
-                        RealTextFieldCell("Title", text: $viewModel.readingList.title)
+                        RealTextField("Title", text: $viewModel.readingList.title)
                             .clearButton(mode: .whileEditing)
                             .autofocused()
                     } else {
